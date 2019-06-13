@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="序列分割$\rightarrow$$O(N^{2})$DP+优化,即考虑上一个分割出的区间的结束位置. “DP套贪心”内层的决策具有贪心性质,或是推导出最优的方案一定具有怎样的性质(如一定优先选较小的等),再以此DP. 二进制分组.要枚举所有的$(x, y),x\neq y$时,如果不容易去掉$x\neq y$ 的限制,可以考虑枚举$x,y$的哪一个二进制位不同.注意这样同一个pair可能被枚举多">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My New Blog">
-<meta property="og:url" content="http://yoursite.com/2019/06/10/hello-world/index.html">
+<meta property="og:title" content="套路总结">
+<meta property="og:url" content="http://yoursite.com/2019/06/13/套路总结/index.html">
 <meta property="og:site_name" content="wgr45097&#39;s blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="序列分割$\rightarrow$$O(N^{2})$DP+优化,即考虑上一个分割出的区间的结束位置. “DP套贪心”内层的决策具有贪心性质,或是推导出最优的方案一定具有怎样的性质(如一定优先选较小的等),再以此DP. 二进制分组.要枚举所有的$(x, y),x\neq y$时,如果不容易去掉$x\neq y$ 的限制,可以考虑枚举$x,y$的哪一个二进制位不同.注意这样同一个pair可能被枚举多">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-10T15:05:35.207Z">
+<meta property="og:updated_time" content="2019-06-13T10:17:10.356Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My New Blog">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="套路总结">
+<meta name="twitter:description" content="序列分割$\rightarrow$$O(N^{2})$DP+优化,即考虑上一个分割出的区间的结束位置. “DP套贪心”内层的决策具有贪心性质,或是推导出最优的方案一定具有怎样的性质(如一定优先选较小的等),再以此DP. 二进制分组.要枚举所有的$(x, y),x\neq y$时,如果不容易去掉$x\neq y$ 的限制,可以考虑枚举$x,y$的哪一个二进制位不同.注意这样同一个pair可能被枚举多">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/10/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/13/套路总结/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>My New Blog | wgr45097's blog</title>
+  <title>套路总结 | wgr45097's blog</title>
   
 
 
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/10/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/13/套路总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wgr45097">
@@ -335,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">My New Blog
+          <h1 class="post-title" itemprop="name headline">套路总结
 
               
             
@@ -361,9 +361,13 @@
                 
               
 
-              <time title="Created: 2019-06-10 23:05:35" itemprop="dateCreated datePublished" datetime="2019-06-10T23:05:35+08:00">2019-06-10</time>
+              <time title="Created: 2019-06-13 18:05:23 / Modified: 18:17:10" itemprop="dateCreated datePublished" datetime="2019-06-13T18:05:23+08:00">2019-06-13</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -396,15 +400,16 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h3 id="序列分割"><a href="#序列分割" class="headerlink" title="序列分割"></a>序列分割</h3><p>$\rightarrow$$O(N^{2})$DP+优化,即考虑上一个分割出的区间的结束位置.</p>
+<h3 id="“DP套贪心”"><a href="#“DP套贪心”" class="headerlink" title="“DP套贪心”"></a>“DP套贪心”</h3><p>内层的决策具有贪心性质,或是推导出最优的方案一定具有怎样的性质(如一定优先选较小的等),再以此DP.</p>
+<h3 id="二进制分组"><a href="#二进制分组" class="headerlink" title="二进制分组."></a>二进制分组.</h3><p>要枚举所有的$(x, y),x\neq y$时,如果不容易去掉$x\neq y$ 的限制,可以考虑枚举$x,y$的哪一个二进制位不同.注意这样同一个pair可能被枚举多次.</p>
+<h3 id="树上路径第k小"><a href="#树上路径第k小" class="headerlink" title="树上路径第k小"></a>树上路径第k小</h3><p>考虑主席树做序列上区间第k小的过程,只需要类似地维护每个点到根的路径对应的权值线段树,利用树上差分,由四个到根路径的权值线段树可以做差得到一个两点间路径的权值线段树.每次四个点一起跳,二分找第k小即可.</p>
+<h3 id="sum-与-prod-的转化"><a href="#sum-与-prod-的转化" class="headerlink" title="$\sum$与$\prod$的转化"></a>$\sum$与$\prod$的转化</h3><p>注意到</p>
+<script type="math/tex; mode=display">
+\ln(\prod a_{i})=\sum(\ln a_{i})</script><p>.<br>因此可以取指数和对数来在和与积直接转化.<br>如变元矩阵树定理适用于边权积,分数规划适用于边权和.</p>
+<h3 id="基于xor的随机化方法"><a href="#基于xor的随机化方法" class="headerlink" title="基于xor的随机化方法"></a>基于xor的随机化方法</h3><p>利用xor同一个值两次相当于没有做的性质.</p>
+<h3 id="绝对值转-max"><a href="#绝对值转-max" class="headerlink" title="绝对值转$\max$"></a>绝对值转$\max$</h3><p>$|a|=\max\{a,-a\}$</p>
+<h3 id="下标和值的转化"><a href="#下标和值的转化" class="headerlink" title="下标和值的转化"></a>下标和值的转化</h3><p>交换dp方程中的下标和值,有时可以优化状态数或者转移,例如使决策具有单调性.</p>
 
       
     </div>
@@ -435,14 +440,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/06/12/析合树与连续段/" rel="next" title="析合树与连续段">
+                <i class="fa fa-chevron-left"></i> 析合树与连续段
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/11/MathJax-Test/" rel="prev" title="MathJax Test">
-                MathJax Test <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/13/错误总结/" rel="prev" title="错误总结">
+                错误总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -554,7 +563,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#序列分割"><span class="nav-number">1.</span> <span class="nav-text">序列分割</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“DP套贪心”"><span class="nav-number">2.</span> <span class="nav-text">“DP套贪心”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制分组"><span class="nav-number">3.</span> <span class="nav-text">二进制分组.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树上路径第k小"><span class="nav-number">4.</span> <span class="nav-text">树上路径第k小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sum-与-prod-的转化"><span class="nav-number">5.</span> <span class="nav-text">$\sum$与$\prod$的转化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于xor的随机化方法"><span class="nav-number">6.</span> <span class="nav-text">基于xor的随机化方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对值转-max"><span class="nav-number">7.</span> <span class="nav-text">绝对值转$\max$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下标和值的转化"><span class="nav-number">8.</span> <span class="nav-text">下标和值的转化</span></a></li></ol></div>
             
 
           </div>
@@ -1046,6 +1055,46 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
