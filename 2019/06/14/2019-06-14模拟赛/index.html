@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="错误 1ll&amp;lt;&amp;lt;60而不是1&amp;lt;&amp;lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:1234567int main()&amp;#123;    int A[0];    int N = 10;    for (int i = 0; i &amp;lt">
+  <meta name="description" content="game将一个$(a,b,a)$拆分成$(a),(a,b)$,就消去了原题的依赖关系. 于是新的问题是物品的体积为1或2的01背包. 考虑将这两种体积的物品分别从大到小排序,记为$A[1..n],B[1..n]$. 显然$f(1)=A[1]$,现在依次确定$f(2),\cdots,f(k)$. 最优决策一定选了$A,B$各自的一段前缀.进一步地,$f(k+1)$的决策一定是在$f(k)$的基础上,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="错误总结">
-<meta property="og:url" content="http://yoursite.com/2019/06/13/错误总结/index.html">
+<meta property="og:title" content="2019.06.14模拟赛">
+<meta property="og:url" content="http://yoursite.com/2019/06/14/2019-06-14模拟赛/index.html">
 <meta property="og:site_name" content="wgr45097&#39;s blog">
-<meta property="og:description" content="错误 1ll&amp;lt;&amp;lt;60而不是1&amp;lt;&amp;lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:1234567int main()&amp;#123;    int A[0];    int N = 10;    for (int i = 0; i &amp;lt">
+<meta property="og:description" content="game将一个$(a,b,a)$拆分成$(a),(a,b)$,就消去了原题的依赖关系. 于是新的问题是物品的体积为1或2的01背包. 考虑将这两种体积的物品分别从大到小排序,记为$A[1..n],B[1..n]$. 显然$f(1)=A[1]$,现在依次确定$f(2),\cdots,f(k)$. 最优决策一定选了$A,B$各自的一段前缀.进一步地,$f(k+1)$的决策一定是在$f(k)$的基础上,">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-13T10:06:45.802Z">
+<meta property="og:updated_time" content="2019-06-14T15:10:20.410Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="错误总结">
-<meta name="twitter:description" content="错误 1ll&amp;lt;&amp;lt;60而不是1&amp;lt;&amp;lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:1234567int main()&amp;#123;    int A[0];    int N = 10;    for (int i = 0; i &amp;lt">
+<meta name="twitter:title" content="2019.06.14模拟赛">
+<meta name="twitter:description" content="game将一个$(a,b,a)$拆分成$(a),(a,b)$,就消去了原题的依赖关系. 于是新的问题是物品的体积为1或2的01背包. 考虑将这两种体积的物品分别从大到小排序,记为$A[1..n],B[1..n]$. 显然$f(1)=A[1]$,现在依次确定$f(2),\cdots,f(k)$. 最优决策一定选了$A,B$各自的一段前缀.进一步地,$f(k+1)$的决策一定是在$f(k)$的基础上,">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/13/错误总结/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/14/2019-06-14模拟赛/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>错误总结 | wgr45097's blog</title>
+  <title>2019.06.14模拟赛 | wgr45097's blog</title>
   
 
 
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/13/错误总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/14/2019-06-14模拟赛/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wgr45097">
@@ -335,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">错误总结
+          <h1 class="post-title" itemprop="name headline">2019.06.14模拟赛
 
               
             
@@ -361,7 +361,7 @@
                 
               
 
-              <time title="Created: 2019-06-13 18:06:21 / Modified: 18:06:45" itemprop="dateCreated datePublished" datetime="2019-06-13T18:06:21+08:00">2019-06-13</time>
+              <time title="Created: 2019-06-14 18:48:29 / Modified: 23:10:20" itemprop="dateCreated datePublished" datetime="2019-06-14T18:48:29+08:00">2019-06-14</time>
             
 
             
@@ -400,14 +400,21 @@
       
 
       
-        <h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><ol>
-<li><code>1ll&lt;&lt;60</code>而不是<code>1&lt;&lt;60</code>(字面量也会int溢出)</li>
-<li>数组越界在开O2优化时会导致一些奇怪的现象,如<code>printf</code>没有输出.</li>
-<li>做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变.</li>
-<li>以下的代码可能可以通过编译:<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> A[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">int</span> N = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">        A[i] = i * i + <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+        <h3 id="game"><a href="#game" class="headerlink" title="game"></a>game</h3><p>将一个$(a,b,a)$拆分成$(a),(a,b)$,就消去了原题的依赖关系.</p>
+<p>于是新的问题是物品的体积为1或2的01背包.</p>
+<p>考虑将这两种体积的物品分别从大到小排序,记为$A[1..n],B[1..n]$.</p>
+<p>显然$f(1)=A[1]$,现在依次确定$f(2),\cdots,f(k)$.</p>
+<p>最优决策一定选了$A,B$各自的一段前缀.进一步地,$f(k+1)$的决策一定是在$f(k)$的基础上,</p>
+<ol>
+<li>多选一个体积为1的物品,或者</li>
+<li>少选一个体积为1的物品,再多选一个体积为2的物品.</li>
 </ol>
-<p>然而在访问<code>A[1],A[2],...</code>时会<code>Segmentation fault</code>.</p>
+<p>这是可以$O(1)$转移的.</p>
+<p>事实上,一类类似的问题被称作”可撤销的贪心”.在本题中,每次转移至多撤销一次.</p>
+<h3 id="sequence"><a href="#sequence" class="headerlink" title="sequence"></a>sequence</h3><p>有$O(qn)$的朴素dp.注意到每次询问都是转移询问长度次,考虑将转移用矩阵乘法表示,则每次询问就是求矩阵的区间积.复杂度是$O((n+q)|\Sigma|^{3})$</p>
+<p>矩阵乘法还可以优化.</p>
+<h3 id="area"><a href="#area" class="headerlink" title="area"></a>area</h3><p>点的区间和形成$(n^{2})$个新点,则要求的式子可以表示为截距的形式.求新点的凸包,每次在凸包上二分询问的斜率.</p>
+<p>注意做各种操作的前后要判重,判三点共线.特别地,在做凸包<strong>之前</strong>要保证没有重合点,最好是一开始先做一次先x后y的坐标排序并unique.如果不想做额外的排序,想利用极角排序的结果,则要注意极角相同时按先x后y排序,且最左下的原点自身同样需要判重.</p>
 
       
     </div>
@@ -438,8 +445,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/13/套路总结/" rel="next" title="套路总结">
-                <i class="fa fa-chevron-left"></i> 套路总结
+              <a href="/2019/06/13/错误总结/" rel="next" title="错误总结">
+                <i class="fa fa-chevron-left"></i> 错误总结
               </a>
             
           </div>
@@ -447,10 +454,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/14/2019-06-14模拟赛/" rel="prev" title="2019.06.14模拟赛">
-                2019.06.14模拟赛 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -561,7 +564,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#错误"><span class="nav-number">1.</span> <span class="nav-text">错误</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#game"><span class="nav-number">1.</span> <span class="nav-text">game</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sequence"><span class="nav-number">2.</span> <span class="nav-text">sequence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#area"><span class="nav-number">3.</span> <span class="nav-text">area</span></a></li></ol></div>
             
 
           </div>
