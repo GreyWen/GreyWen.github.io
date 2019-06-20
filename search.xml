@@ -1,29 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[2019-06-13模拟赛]]></title>
+    <title><![CDATA[Burnside引理与Polya原理]]></title>
+    <url>%2F2019%2F06%2F20%2FBurnside%E5%BC%95%E7%90%86%E4%B8%8EPolya%E5%8E%9F%E7%90%86%2F</url>
+    <content type="text"><![CDATA[陪集拉格朗日定理 若$S^{\prime}$是$S$的子群,则$\frac{|G|}{|G^{\prime}|}=|\{ gG^{\prime}:g\in G\}|$,即原群的大小等于子群大小乘以其陪集数. 欧拉定理作为拉格朗日定理的简单推论显然$m$的简化剩余系$Z_{m}$与模$m$意义下的整数乘法构成一个群$(Z_{m},\times_{m})$.$a$的所有幂次构成一个子群$G_{a}$.显然$a^{|G_{a}|}=1$.又因为$|Z_m|$是$|G_{a}|$的倍数,所以$a^{|Z_{m}|}=1$,即$a^{\varphi(m)}=1$.事实上,$|G_a|$就是$a$的指标. 轨道-稳定化子定理 $|\text{orbit}(x)|\cdot|stab(x)|=|G|$,即$X$里任意元素的轨道大小乘以稳定化子($x$-不动置换)的数目等于置换群的大小. Burnside引理 \text{轨道数}=\sum_{\text{轨道A}}1=\sum_{\text{轨道A}}\sum_{x\in A}\frac{1}{|A|}\\ =\sum_{x}\frac{1}{|\text{orbit}(x)|}=\frac{\sum_{x}|\text{stab}(x)|}{|G|}=\frac{\sum_{g\in G}|\{x:g(x)=x\}| }{|G|}即等价类的个数等于所有置换的平均不动点数. Polya计数原理考虑若干物品的染色问题.若将物品集合记做$M$,可选颜色集合记做$Y$,则 Y^{M}=\{f|f:M\rightarrow Y\}即所有$M$到$Y$的函数,就是所有染色方案的集合.对于任意一个$M$上的置换$g$,容易验证与其关联的$g^{\prime}$: [g^{\prime}(f)](x)=f(g(x)),\forall f\in Y^{M},x\in X是一个$Y^{M}$上的置换.所有$G$中的置换都对应一个新置换,所有的新置换仍构成一个群,记为$H$.在不引起歧义时,可以将$g^\prime,H$仍写为$g,G$.于是我们仍可以用Burnside引理得到$Y^M$在$G$的作用下的轨道数,即平常所说的”本质不同的染色方案数”.现在考虑某置换$g$在$Y^M$上的不动点数.$f\in Y^M$在$g$的作用下不动的充要条件是,$f$在($M$上$g$的同一轮换处)的取值相同. 如果染色方案有限制,即要统计方案全集$Y^M$的一个子集$Z$,且任意$g\in G$仍然是$Z$上的置换(即满足限制的方案被作用后一定满足限制,反之亦然),那么我们还是可以使用Burnside引理,不过可能要使用其他方法(如动态规划)统计$g\in G$在$Z$上的不动点数量(即在特定置换下不变的染色方案数)的平均值. 特殊的置换:环的旋转和翻转例题https://blog.csdn.net/Coldfresh/article/details/77896437]]></content>
+      <categories>
+        <category>知识点</category>
+        <category>数学</category>
+        <category>组合计数</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[集合幂级数]]></title>
+    <url>%2F2019%2F06%2F17%2F%E9%9B%86%E5%90%88%E5%B9%82%E7%BA%A7%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[三类常见的位运算or, and, xor分别对应三种位运算卷积,即or卷积, and卷积, xor卷积.如果将二进制数看做集合,上面三种位运算分别对应集合的并,交,对称差.另外,我们还关心集合的不相交并.由此我们引入下面四种位运算卷积的快速算法.对于复数上的普通的卷积$c_n=\sum_{i+j=n}a_{i}b_{j}$,快速算法是先DFT,之后点乘,再IDFT.事实上,下面四种位运算的前三种都有与DFT作用类似的变换与之对应.而第四种运算,即子集卷积,可以转化为前三种中的任意一种. or卷积and卷积xor卷积子集卷积(不相交并)]]></content>
+      <categories>
+        <category>知识点</category>
+        <category>数学</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[2019.06.13模拟赛]]></title>
     <url>%2F2019%2F06%2F15%2F2019-06-13%E6%A8%A1%E6%8B%9F%E8%B5%9B%2F</url>
     <content type="text"><![CDATA[String先考虑给定$S,T$怎样求$S$的最小代价.这等价于将$S$划分为若干连续的段,每一段都是$T$的子串,求最小划分段数. 这个问题可以贪心:将$S$的尽量长的前缀划分为一段.贪心的正确性可以用决策包容性证明. 回到原来的问题.注意到一个串是$T$的子串和它在$T$的SAM上是等价的.考虑逐个确定$S$的每一位的过程,每加入一个字符,就在$T$的SAM上做相应的转移,若无法转移则回到根节点并转移,且将代价$+1$.于是,我们只需预处理出从$T$上对应字符$a,b,c,d$的4个点中的某个点出发,以$a,b,c,d$中的某种转移失败结束,所需要的最小长度.这是一个$4\times 4$的矩阵.得到矩阵之后,只需要矩阵快速幂即可.]]></content>
+      <categories>
+        <category>模拟赛</category>
+        <category>中山纪念中学</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[2019.06.14模拟赛]]></title>
     <url>%2F2019%2F06%2F14%2F2019-06-14%E6%A8%A1%E6%8B%9F%E8%B5%9B%2F</url>
     <content type="text"><![CDATA[game将一个$(a,b,a)$拆分成$(a),(a,b)$,就消去了原题的依赖关系. 于是新的问题是物品的体积为1或2的01背包. 考虑将这两种体积的物品分别从大到小排序,记为$A[1..n],B[1..n]$. 显然$f(1)=A[1]$,现在依次确定$f(2),\cdots,f(k)$. 最优决策一定选了$A,B$各自的一段前缀.进一步地,$f(k+1)$的决策一定是在$f(k)$的基础上, 多选一个体积为1的物品,或者 少选一个体积为1的物品,再多选一个体积为2的物品. 这是可以$O(1)$转移的. 事实上,一类类似的问题被称作”可撤销的贪心”.在本题中,每次转移至多撤销一次. sequence有$O(qn)$的朴素dp.注意到每次询问都是转移询问长度次,考虑将转移用矩阵乘法表示,则每次询问就是求矩阵的区间积.复杂度是$O((n+q)|\Sigma|^{3})$ 矩阵乘法还可以优化. area点的区间和形成$(n^{2})$个新点,则要求的式子可以表示为截距的形式.求新点的凸包,每次在凸包上二分询问的斜率. 注意做各种操作的前后要判重,判三点共线.特别地,在做凸包之前要保证没有重合点,最好是一开始先做一次先x后y的坐标排序并unique.如果不想做额外的排序,想利用极角排序的结果,则要注意极角相同时按先x后y排序,且最左下的原点自身同样需要判重.]]></content>
+      <categories>
+        <category>模拟赛</category>
+        <category>中山纪念中学</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[错误总结]]></title>
     <url>%2F2019%2F06%2F13%2F%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[错误 1ll&lt;&lt;60而不是1&lt;&lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:1234567int main()&#123; int A[0]; int N = 10; for (int i = 0; i &lt; N; ++i) A[i] = i * i + 3;&#125; 然而在访问A[1],A[2],...时会Segmentation fault.]]></content>
+    <content type="text"><![CDATA[错误 1ll&lt;&lt;60而不是1&lt;&lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:1234567int main()&#123; int A[0]; int N = 10; for (int i = 0; i &lt; N; ++i) A[i] = i * i + 3;&#125; 然而在访问A[1],A[2],...时会Segmentation fault. 注意MLE. 心得 写每个程序片段时一定要明确它的作用和适用范围(例如”合并两个凸包,需要保证传入的每个凸包内两点不重合,三点不共线”),写完代码一定要在头脑中梳理一遍程序的流程. 用namespace使得针对不同Subtask的程序片段间互不影响. 打表找规律. 对一个迭代的过程,一定要想清楚它的invariant是什么. 分Subtask大力讨论的题性价比高,因为写错一部分几乎不影响另一部分.]]></content>
+      <categories>
+        <category>general</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[套路总结]]></title>
     <url>%2F2019%2F06%2F13%2F%E5%A5%97%E8%B7%AF%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[序列分割$\rightarrow$$O(N^{2})$DP+优化,即考虑上一个分割出的区间的结束位置. “DP套贪心”内层的决策具有贪心性质,或是推导出最优的方案一定具有怎样的性质(如一定优先选较小的等),再以此DP. 二进制分组.要枚举所有的$(x, y),x\neq y$时,如果不容易去掉$x\neq y$ 的限制,可以考虑枚举$x,y$的哪一个二进制位不同.注意这样同一个pair可能被枚举多次. 树上路径第k小考虑主席树做序列上区间第k小的过程,只需要类似地维护每个点到根的路径对应的权值线段树,利用树上差分,由四个到根路径的权值线段树可以做差得到一个两点间路径的权值线段树.每次四个点一起跳,二分找第k小即可. $\sum$与$\prod$的转化注意到 \ln(\prod a_{i})=\sum(\ln a_{i}).因此可以取指数和对数来在和与积直接转化.如变元矩阵树定理适用于边权积,分数规划适用于边权和. 基于xor的随机化方法利用xor同一个值两次相当于没有做的性质. 绝对值转$\max$$|a|=\max\{a,-a\}$ 下标和值的转化交换dp方程中的下标和值,有时可以优化状态数或者转移,例如使决策具有单调性.]]></content>
+      <categories>
+        <category>general</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[析合树与连续段]]></title>
     <url>%2F2019%2F06%2F12%2F%E6%9E%90%E5%90%88%E6%A0%91%E4%B8%8E%E8%BF%9E%E7%BB%AD%E6%AE%B5%2F</url>
     <content type="text"><![CDATA[连续段 本原连续段 定义 子序列 子序列的值 对于$n$阶排列$p_{1},p_{2},\cdots,p_{n}$,一个子序列$x$是一段连续的下标$\{l_{x},l_{x}+1,\cdots,r_{x}\}$,子序列的值$val(x):=\{p_i:i\in[l_{x},r_{x}]\}$. 定义 连续段 如果子序列$x$的值也是连续的一段,即$r_{x}-l_{x}+1=\max val(x)-\min val(x)+1$,则称$x$为连续段. 另一种等价定义是,子序列$x$是连续段当且仅当它的值中有$|x|-1$个恰好相差1的无序二元组$\{b,b+1\}$. 利用连续段的第二定义可以方便的将极长连续段问题转化为区间加法和区间最值问题,可以用可持久化线段树维护. 引理1 容易证明,如果两个连续段$x,y$部分相交(即相交但不包含),则$x\cap y,x\cup y,x\backslash x\cap y,y\backslash x\cap y$也都是连续段. 定义 本原连续段 非本原连续段 如果某个连续段$x$满足,不存在连续段$y$与$x$部分相交,则称$x$是本原连续段;否则称$x$是非本原连续段. 引理2 每个非本原连续段$x$一定能表示为若干个本原连续段的并.证明:长度为1的连续段显然都是本原连续段.设$x$是非本原连续段,则$|x|&gt;1$.设$y$是某个与$x$部分相交的连续段.则$x_{1}=x\cap y,x_{2}=x\backslash x\cap y$都是连续段,且$0&lt;|x_{1}|,|x_{2}|&lt;|x|$.根据归纳假设,$x_{1},x_{2}$都可以被表示为若干(一个或多个)本原连续段的并,于是只需将$x_{1},x_{2}$的表示合并,就得到了$x$的表示. 析合树 定义 析合树设全体本原连续段构成的集合为$M$,则$M$中的任意两个元素要么不相交,要么包含.$M$配备了子集偏序关系$\subseteq$后形成偏序集.这个偏序集与一个有根树$T$一一对应,满足树上节点一一对应$M$中元素,树上的祖先后代关系一一对应子集偏序关系.如果将$T$的每个节点的儿子按照对应的连续段的下标的自然顺序排序,得到的有根有序树就称作排列$p$对应的析合树. 定义 儿子排列 对于析合树上的一个非叶节点$x$,设它有$m$个儿子,将其儿子按照值域顺序重新赋$[1,m]$的值,得到一个$m$阶排列$q_{1}, q_{2},\cdots,q_{m},$称为$x$的儿子排列. 引理3 析合性质 析合树上的每个非叶节点$x$,一定满足以下两个性质中的恰好一个: 儿子排列的非平凡子序列都是连续的. 儿子排列的非平凡子序列都不是连续的. 证明: 设儿子排列有某个非平凡连续段$h$. 注意到$h$一定是非本原的(因为若不然,一定可以将$h$覆盖的儿子合并为一个新的本原连续段,作为$x$的新儿子),因此存在与$h$部分相交的$h^{\prime}$.令$h\leftarrow h\cup h^{\prime}$,则$|h|$一定增大了,如此迭代下去,就找到了一组非平凡非本原连续段,它们的并是整个排列. 现在我们证明,对于任意一个非平凡连续段$h$,$h$覆盖的所有位置都是某个非平凡连续段的左端点和某个非平凡连续段的右端点. … 于是,将以$1,2,\cdots,i$结尾的非平凡连续段依次取并,可以证明所有的前缀都是连续段;同理所有的后缀都是连续段.将前缀和后缀两两取交,就证明了所有的非平凡段都是连续的. 析合树的构造如果给定一个析点或合点代表的区间,能求出它的儿子代表的区间,我们就可以递归地进行这个过程,构造出析合树.另一个问题是判断一个点是析点还是合点. 模板这是CERC2017 “Intrinsic Interval”一题的AC代码.此代码不是原创,在转载时添加了一些自己的注释. 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183184185186187188189190191192193194195196197198199200201202203204205206207208209210211212213214215216217218219220221222#include &lt;bits/stdc++.h&gt;#define pct puts("------ visit ------");#define rep(a, b, c) for(int a = (b); a &lt;= (c); ++ a)#define per(a, b, c) for(int a = (b); a &gt;= (c); -- a)using namespace std;template &lt;class T&gt; void rd(T &amp;x)&#123; x = 0; int f = 1; char ch = getchar(); while(ch &lt; '0' || ch &gt; '9')&#123; if(ch == '-') f = -1; ch = getchar(); &#125; while(ch &gt;= '0' &amp;&amp; ch &lt;= '9') x = x * 10 + ch - '0', ch = getchar(); x *= f;&#125;typedef pair &lt;int, int&gt; pii;const int inf = 0x3f3f3f3f;const int maxn = 1e5 + 5;int a[maxn], b[maxn];int n, m;struct persistent_segment_tree&#123; struct node&#123; int ls, rs; int ad, mi; &#125;tr[maxn * 70]; int rt[maxn], idx;#define ls tr[u].ls#define rs tr[u].rs#define lson ls, l, mid#define rson rs, mid + 1, r void newnode(int &amp;u)&#123; tr[++ idx] = tr[u]; u = idx; &#125; void addv(int u, int v)&#123; tr[u].ad += v; tr[u].mi += v; &#125; void pushdown(int u)&#123; if(tr[u].ad)&#123; newnode(ls); newnode(rs); addv(ls, tr[u].ad); addv(rs, tr[u].ad); tr[u].ad = 0; &#125; &#125; void pushup(int u)&#123; tr[u].mi = min(tr[ls].mi, tr[rs].mi); &#125; void build(int &amp;u, int l, int r)&#123; u = ++ idx; if(l == r) return (void) (tr[u].mi = 1); int mid = l + r &gt;&gt; 1; build(lson), build(rson); pushup(u); &#125; void update(int &amp;u, int l, int r, int ql, int qr, int v)&#123; newnode(u); if(ql &lt;= l &amp;&amp; r &lt;= qr) return (void) (addv(u, v)); int mid = l + r &gt;&gt; 1; pushdown(u); if(ql &lt;= mid) update(lson, ql, qr, v); if(qr &gt; mid) update(rson, ql, qr, v); pushup(u); &#125; //val &gt;= 1 at all times int query(int u, int l, int r, int ql, int qr)&#123;//leftmost pos with val == 1 if(ql &lt;= l &amp;&amp; r &lt;= qr)&#123; if(tr[u].mi == 1)&#123; int mid = l + r &gt;&gt; 1; pushdown(u); if(l == r) return l; else if(tr[ls].mi == 1) return query(lson, ql, qr); else return query(rson, ql, qr); &#125; else return -1; &#125; int mid = l + r &gt;&gt; 1; pushdown(u); if(ql &lt;= mid)&#123; int res = query(lson, ql, qr); if(res != -1) return res; &#125; if(qr &gt; mid) return query(rson, ql, qr); &#125; void build()&#123; build(rt[1], 1, n); rep(i, 1, n) b[a[i]] = i; rep(i, 2, n)&#123; rt[i] = rt[i - 1]; update(rt[i], 1, n, 1, i - 1, 1); if(a[i] &gt; 1 &amp;&amp; b[a[i] - 1] &lt; i) update(rt[i], 1, n, 1, b[a[i] - 1], -1); if(a[i] &lt; n &amp;&amp; b[a[i] + 1] &lt; i) update(rt[i], 1, n, 1, b[a[i] + 1], -1); &#125; &#125;&#125;pr, sf;//prefix, suffix#define rev(x) n + 1 - (x)const int maxs = maxn * 2;struct postive_differ_tree&#123; int pos[maxs], op[maxs]; int pre[maxs][21], dep[maxs]; pii bound[maxs]; int idx, rt; vector &lt;int&gt; e[maxs]; void adde(int u, int v)&#123; e[u].push_back(v); &#125; void divide(int &amp;u, int l, int r)&#123; u = ++ idx; bound[u] = pii(l, r); if(l == r)&#123; pos[l] = u; return ; &#125; //query(pr.rt[cur], 1, n, ql, qr) leftmost pos in [ql, qr] s.t. [pos, cur] is continuous int x = pr.query(pr.rt[r], 1, n, l + 1, r); int y = rev(sf.query(sf.rt[rev(l)], 1, n, rev(r - 1), rev(l))); int lst = l; if(y &lt; x - 1)&#123;//cannot cover the whole interval [l, r] op[u] = 0; int v; while(y != x - 1)&#123; divide(v, lst, y), adde(u, v); lst = y + 1; y = rev(sf.query(sf.rt[rev(lst)], 1, n, rev(r - 1), rev(lst))); &#125; divide(v, lst, y); adde(u, v); divide(v, y + 1, r); adde(u, v); &#125; else&#123; op[u] = 1; int v; while(y != x - 1)&#123; divide(v, lst, x - 1); adde(u, v); lst = x; x = pr.query(pr.rt[r], 1, n, x + 1, r); &#125; divide(v, lst, x - 1); adde(u, v); divide(v, x, r); adde(u, v); &#125; &#125; void dfs(int u)&#123; for(int i = 0; i &lt; e[u].size(); ++ i)&#123; int v = e[u][i]; dep[v] = dep[u] + 1; pre[v][0] = u; rep(j, 1, 20) pre[v][j] = pre[pre[v][j - 1]][j - 1]; dfs(v); &#125; &#125; int lca(int a, int b)&#123; if(dep[a] &gt; dep[b]) swap(a, b); per(i, 20, 0) if(dep[a] &lt;= dep[b] - (1 &lt;&lt; i)) b = pre[b][i]; if(a == b) return a; per(i, 20, 0) if(pre[a][i] != pre[b][i]) a = pre[a][i], b = pre[b][i]; return pre[a][0]; &#125; void build()&#123; divide(rt, 1, n); dfs(1); &#125; pii query(int l, int r)&#123; if(l == r) return pii(l, r); int u = lca(pos[l], pos[r]); if(op[u] == 0) return bound[u];//xi1 pii res; int sz = e[u].size(); int ql, qr; ql = 0, qr = sz - 1; while(qr - ql &gt; 1)&#123; int mid = ql + qr &gt;&gt; 1; if(bound[e[u][mid]].first &lt;= l) ql = mid; else qr = mid; &#125; res.first = bound[e[u][ql]].first; ql = 0, qr = sz - 1; while(qr - ql &gt; 1)&#123; int mid = ql + qr &gt;&gt; 1; if(bound[e[u][mid]].second &gt;= r) qr = mid; else ql = mid; &#125; res.second = bound[e[u][qr]].second; return res; &#125;&#125;pdt;void sol()&#123; rd(m); while(m --)&#123; int l, r; rd(l), rd(r); pii res = pdt.query(l, r); printf("%d %d\n", res.first, res.second); &#125;&#125;int main()&#123; freopen("c.in", "r", stdin); freopen("c.out", "w", stdout); rd(n); rep(i, 1, n) rd(a[i]); pr.build(); reverse(a + 1, a + n + 1); sf.build(); pdt.build(); sol(); return 0;&#125;]]></content>
+      <categories>
+        <category>知识点</category>
+        <category>数据结构</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[MathJax Test]]></title>
