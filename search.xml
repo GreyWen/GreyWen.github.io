@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[min25筛]]></title>
+    <url>%2F2019%2F06%2F20%2Fmin25%E7%AD%9B%2F</url>
+    <content type="text"><![CDATA[下面默认$p$是一个质数. min25筛如果一个数论函数$f$满足: $f$是积性函数 $f(p)$是关于$p$的简单多项式 $f(p^{k})$可以快速地求出则min25筛可以以低于线性的时间算出$f$的前缀和.如果能够$O(1)$求$f(p^{k})$,则min25筛的时间复杂度可以认为是$O(\frac{n^{0.75}}{\log n})$. 第一步:求前$\lfloor\frac{n}{i}\rfloor$项的质数位置的前缀和设 g(x)=\sum_{1\leq i\leq x}[i\in P]f(i).我们知道$\frac{n}{1},\frac{n}{2},\cdots,\frac{n}{i},\cdots,\frac{n}{n}$只有$O(\sqrt{n})$种取值.我们想要算出$g$在这每种取值处的值. 第二步:求前$n$项的最小质因子大于$P_{j}$的位置的前缀和]]></content>
+      <categories>
+        <category>知识点</category>
+        <category>数学</category>
+        <category>数论</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Burnside引理与Polya原理]]></title>
     <url>%2F2019%2F06%2F20%2FBurnside%E5%BC%95%E7%90%86%E4%B8%8EPolya%E5%8E%9F%E7%90%86%2F</url>
     <content type="text"><![CDATA[陪集拉格朗日定理 若$S^{\prime}$是$S$的子群,则$\frac{|G|}{|G^{\prime}|}=|\{ gG^{\prime}:g\in G\}|$,即原群的大小等于子群大小乘以其陪集数. 欧拉定理作为拉格朗日定理的简单推论显然$m$的简化剩余系$Z_{m}$与模$m$意义下的整数乘法构成一个群$(Z_{m},\times_{m})$.$a$的所有幂次构成一个子群$G_{a}$.显然$a^{|G_{a}|}=1$.又因为$|Z_m|$是$|G_{a}|$的倍数,所以$a^{|Z_{m}|}=1$,即$a^{\varphi(m)}=1$.事实上,$|G_a|$就是$a$的指标. 轨道-稳定化子定理 $|\text{orbit}(x)|\cdot|stab(x)|=|G|$,即$X$里任意元素的轨道大小乘以稳定化子($x$-不动置换)的数目等于置换群的大小. Burnside引理 \text{轨道数}=\sum_{\text{轨道A}}1=\sum_{\text{轨道A}}\sum_{x\in A}\frac{1}{|A|}\\ =\sum_{x}\frac{1}{|\text{orbit}(x)|}=\frac{\sum_{x}|\text{stab}(x)|}{|G|}=\frac{\sum_{g\in G}|\{x:g(x)=x\}| }{|G|}即等价类的个数等于所有置换的平均不动点数. Polya计数原理考虑若干物品的染色问题.若将物品集合记做$M$,可选颜色集合记做$Y$,则 Y^{M}=\{f|f:M\rightarrow Y\}即所有$M$到$Y$的函数,就是所有染色方案的集合.对于任意一个$M$上的置换$g$,容易验证与其关联的$g^{\prime}$: [g^{\prime}(f)](x)=f(g(x)),\forall f\in Y^{M},x\in X是一个$Y^{M}$上的置换.所有$G$中的置换都对应一个新置换,所有的新置换仍构成一个群,记为$H$.在不引起歧义时,可以将$g^\prime,H$仍写为$g,G$.于是我们仍可以用Burnside引理得到$Y^M$在$G$的作用下的轨道数,即平常所说的”本质不同的染色方案数”.现在考虑某置换$g$在$Y^M$上的不动点数.$f\in Y^M$在$g$的作用下不动的充要条件是,$f$在($M$上$g$的同一轮换处)的取值相同. 如果染色方案有限制,即要统计方案全集$Y^M$的一个子集$Z$,且任意$g\in G$仍然是$Z$上的置换(即满足限制的方案被作用后一定满足限制,反之亦然),那么我们还是可以使用Burnside引理,不过可能要使用其他方法(如动态规划)统计$g\in G$在$Z$上的不动点数量(即在特定置换下不变的染色方案数)的平均值. 特殊的置换:环的旋转和翻转例题https://blog.csdn.net/Coldfresh/article/details/77896437]]></content>
@@ -40,7 +50,7 @@
   <entry>
     <title><![CDATA[错误总结]]></title>
     <url>%2F2019%2F06%2F13%2F%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[错误 1ll&lt;&lt;60而不是1&lt;&lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:1234567int main()&#123; int A[0]; int N = 10; for (int i = 0; i &lt; N; ++i) A[i] = i * i + 3;&#125; 然而在访问A[1],A[2],...时会Segmentation fault. 注意MLE. 心得 写每个程序片段时一定要明确它的作用和适用范围(例如”合并两个凸包,需要保证传入的每个凸包内两点不重合,三点不共线”),写完代码一定要在头脑中梳理一遍程序的流程. 用namespace使得针对不同Subtask的程序片段间互不影响. 打表找规律. 对一个迭代的过程,一定要想清楚它的invariant是什么. 分Subtask大力讨论的题性价比高,因为写错一部分几乎不影响另一部分.]]></content>
+    <content type="text"><![CDATA[错误 1ll&lt;&lt;60而不是1&lt;&lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:1234567int main()&#123; int A[0]; int N = 10; for (int i = 0; i &lt; N; ++i) A[i] = i * i + 3;&#125; 然而在访问A[1],A[2],...时会Segmentation fault. 注意MLE. 强制在线时,每次回答完询问要更新lastans. 两个long long相乘,对一个int取模时,要先各自取模,相乘后再取模. 形参是int时,即使传入一个long long的实参,也会先被转为int. 心得 写每个程序片段时一定要明确它的作用和适用范围(例如”合并两个凸包,需要保证传入的每个凸包内两点不重合,三点不共线”),写完代码一定要在头脑中梳理一遍程序的流程. 用namespace使得针对不同Subtask的程序片段间互不影响. 打表找规律. 对一个迭代的过程,一定要想清楚它的invariant是什么. 分Subtask大力讨论的题性价比高,因为写错一部分几乎不影响另一部分.]]></content>
       <categories>
         <category>general</category>
       </categories>

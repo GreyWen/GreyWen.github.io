@@ -332,6 +332,202 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/20/min25筛/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wgr45097">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wgr45097's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/20/min25筛/" class="post-title-link" itemprop="url">min25筛</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-20 22:15:16" itemprop="dateCreated datePublished" datetime="2019-06-20T22:15:16+08:00">2019-06-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-06-22 22:24:03" itemprop="dateModified" datetime="2019-06-22T22:24:03+08:00">2019-06-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/知识点/" itemprop="url" rel="index"><span itemprop="name">知识点</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/知识点/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/知识点/数学/数论/" itemprop="url" rel="index"><span itemprop="name">数论</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>下面默认$p$是一个质数.</p>
+<h3 id="min25筛"><a href="#min25筛" class="headerlink" title="min25筛"></a>min25筛</h3><p>如果一个数论函数$f$满足:</p>
+<ol>
+<li>$f$是积性函数</li>
+<li>$f(p)$是关于$p$的简单多项式</li>
+<li>$f(p^{k})$可以快速地求出<br>则min25筛可以以低于线性的时间算出$f$的前缀和.<br>如果能够$O(1)$求$f(p^{k})$,则min25筛的时间复杂度可以认为是$O(\frac{n^{0.75}}{\log n})$.</li>
+</ol>
+<h3 id="第一步-求前-lfloor-frac-n-i-rfloor-项的质数位置的前缀和"><a href="#第一步-求前-lfloor-frac-n-i-rfloor-项的质数位置的前缀和" class="headerlink" title="第一步:求前$\lfloor\frac{n}{i}\rfloor$项的质数位置的前缀和"></a>第一步:求前$\lfloor\frac{n}{i}\rfloor$项的质数位置的前缀和</h3><p>设</p>
+<script type="math/tex; mode=display">
+g(x)=\sum_{1\leq i\leq x}[i\in P]f(i)</script><p>.<br>我们知道$\frac{n}{1},\frac{n}{2},\cdots,\frac{n}{i},\cdots,\frac{n}{n}$只有$O(\sqrt{n})$种取值.我们想要算出$g$在这每种取值处的值.</p>
+<h3 id="第二步-求前-n-项的最小质因子大于-P-j-的位置的前缀和"><a href="#第二步-求前-n-项的最小质因子大于-P-j-的位置的前缀和" class="headerlink" title="第二步:求前$n$项的最小质因子大于$P_{j}$的位置的前缀和"></a>第二步:求前$n$项的最小质因子大于$P_{j}$的位置的前缀和</h3>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/20/Burnside引理与Polya原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1141,7 +1337,7 @@ Y^{M}=\{f|f:M\rightarrow Y\}</script><p>即所有$M$到$Y$的函数,就是所有
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-06-20 13:45:50" itemprop="dateModified" datetime="2019-06-20T13:45:50+08:00">2019-06-20</time>
+                <time title="Modified: 2019-06-22 22:27:05" itemprop="dateModified" datetime="2019-06-22T22:27:05+08:00">2019-06-22</time>
               
             
           </span>
@@ -1205,6 +1401,9 @@ Y^{M}=\{f|f:M\rightarrow Y\}</script><p>即所有$M$到$Y$的函数,就是所有
 <p>然而在访问<code>A[1],A[2],...</code>时会<code>Segmentation fault</code>.</p>
 <ol>
 <li>注意MLE.</li>
+<li>强制在线时,每次回答完询问要更新<code>lastans</code>.</li>
+<li>两个<code>long long</code>相乘,对一个<code>int</code>取模时,要先各自取模,相乘后再取模.</li>
+<li>形参是<code>int</code>时,即使传入一个<code>long long</code>的实参,也会先被转为<code>int</code>.</li>
 </ol>
 <h2 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h2><ol>
 <li>写每个程序片段时一定要明确它的作用和适用范围(例如”合并两个凸包,需要保证传入的每个凸包内两点不重合,三点不共线”),写完代码一定要在头脑中梳理一遍程序的流程.</li>
@@ -1990,7 +2189,7 @@ P = \frac
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2021,7 +2220,9 @@ P = \frac
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -2532,6 +2733,8 @@ P = \frac
     
       
         
+      
+    
       
     
       

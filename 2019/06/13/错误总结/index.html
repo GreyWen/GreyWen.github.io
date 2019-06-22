@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="wgr45097&#39;s blog">
 <meta property="og:description" content="错误 1ll&amp;lt;&amp;lt;60而不是1&amp;lt;&amp;lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:1234567int main()&amp;#123;    int A[0];    int N = 10;    for (int i = 0; i &amp;lt">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-20T05:45:50.016Z">
+<meta property="og:updated_time" content="2019-06-22T14:27:05.410Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="错误总结">
 <meta name="twitter:description" content="错误 1ll&amp;lt;&amp;lt;60而不是1&amp;lt;&amp;lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:1234567int main()&amp;#123;    int A[0];    int N = 10;    for (int i = 0; i &amp;lt">
@@ -395,7 +395,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-06-20 13:45:50" itemprop="dateModified" datetime="2019-06-20T13:45:50+08:00">2019-06-20</time>
+                <time title="Modified: 2019-06-22 22:27:05" itemprop="dateModified" datetime="2019-06-22T22:27:05+08:00">2019-06-22</time>
               
             
           </span>
@@ -457,6 +457,9 @@
 <p>然而在访问<code>A[1],A[2],...</code>时会<code>Segmentation fault</code>.</p>
 <ol>
 <li>注意MLE.</li>
+<li>强制在线时,每次回答完询问要更新<code>lastans</code>.</li>
+<li>两个<code>long long</code>相乘,对一个<code>int</code>取模时,要先各自取模,相乘后再取模.</li>
+<li>形参是<code>int</code>时,即使传入一个<code>long long</code>的实参,也会先被转为<code>int</code>.</li>
 </ol>
 <h2 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h2><ol>
 <li>写每个程序片段时一定要明确它的作用和适用范围(例如”合并两个凸包,需要保证传入的每个凸包内两点不重合,三点不共线”),写完代码一定要在头脑中梳理一遍程序的流程.</li>
@@ -576,7 +579,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -607,7 +610,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
