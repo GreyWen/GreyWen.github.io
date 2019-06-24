@@ -50,7 +50,7 @@
   <entry>
     <title><![CDATA[错误总结]]></title>
     <url>%2F2019%2F06%2F13%2F%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[错误 1ll&lt;&lt;60而不是1&lt;&lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:1234567int main()&#123; int A[0]; int N = 10; for (int i = 0; i &lt; N; ++i) A[i] = i * i + 3;&#125; 然而在访问A[1],A[2],...时会Segmentation fault. 注意MLE. 强制在线时,每次回答完询问要更新lastans. 两个long long相乘,对一个int取模时,要先各自取模,相乘后再取模. 形参是int时,即使传入一个long long的实参,也会先被转为int. 心得 写每个程序片段时一定要明确它的作用和适用范围(例如”合并两个凸包,需要保证传入的每个凸包内两点不重合,三点不共线”),写完代码一定要在头脑中梳理一遍程序的流程. 用namespace使得针对不同Subtask的程序片段间互不影响. 打表找规律. 对一个迭代的过程,一定要想清楚它的invariant是什么. 分Subtask大力讨论的题性价比高,因为写错一部分几乎不影响另一部分.]]></content>
+    <content type="text"><![CDATA[错误 1ll&lt;&lt;60而不是1&lt;&lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:1234567int main()&#123; int A[0]; int N = 10; for (int i = 0; i &lt; N; ++i) A[i] = i * i + 3;&#125; 然而在访问A[1],A[2],...时会Segmentation fault. 注意MLE. 强制在线时,每次回答完询问要更新lastans. 两个long long相乘,对一个int取模时,要先各自取模,相乘后再取模. 形参是int时,即使传入一个long long的实参,也会先被转为int. 多测要清空. 心得 写每个程序片段时一定要明确它的作用和适用范围(例如”合并两个凸包,需要保证传入的每个凸包内两点不重合,三点不共线”),写完代码一定要在头脑中梳理一遍程序的流程. 用namespace使得针对不同Subtask的程序片段间互不影响. 打表找规律. 对一个迭代的过程,一定要想清楚它的invariant是什么. 分Subtask大力讨论的题性价比高,因为写错一部分几乎不影响另一部分.]]></content>
       <categories>
         <category>general</category>
       </categories>
