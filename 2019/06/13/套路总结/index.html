@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="wgr45097&#39;s blog">
 <meta property="og:description" content="不全是套路,也有一些思想和方法. 序列分割$\rightarrow$$O(N^{2})$DP+优化,即考虑上一个分割出的区间的结束位置. “DP套贪心”内层的决策具有贪心性质,或是推导出最优的方案一定具有怎样的性质(如一定优先选较小的等),再以此DP. 二进制分组.要枚举所有的$(x, y),x\neq y$时,如果不容易去掉$x\neq y$ 的限制,可以考虑枚举$x,y$的哪一个二进制位不同.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-26T14:24:45.935Z">
+<meta property="og:updated_time" content="2019-06-27T14:42:37.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="套路总结">
 <meta name="twitter:description" content="不全是套路,也有一些思想和方法. 序列分割$\rightarrow$$O(N^{2})$DP+优化,即考虑上一个分割出的区间的结束位置. “DP套贪心”内层的决策具有贪心性质,或是推导出最优的方案一定具有怎样的性质(如一定优先选较小的等),再以此DP. 二进制分组.要枚举所有的$(x, y),x\neq y$时,如果不容易去掉$x\neq y$ 的限制,可以考虑枚举$x,y$的哪一个二进制位不同.">
@@ -395,7 +395,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-06-26 22:24:45" itemprop="dateModified" datetime="2019-06-26T22:24:45+08:00">2019-06-26</time>
+                <time title="Modified: 2019-06-27 22:42:37" itemprop="dateModified" datetime="2019-06-27T22:42:37+08:00">2019-06-27</time>
               
             
           </span>
@@ -458,7 +458,7 @@
 <h3 id="基于xor的随机化方法"><a href="#基于xor的随机化方法" class="headerlink" title="基于xor的随机化方法"></a>基于xor的随机化方法</h3><p>利用xor同一个值两次相当于没有做的性质.</p>
 <h3 id="绝对值转-max"><a href="#绝对值转-max" class="headerlink" title="绝对值转$\max$"></a>绝对值转$\max$</h3><p>$|a|=\max\{a,-a\}$</p>
 <h3 id="下标和值的转化"><a href="#下标和值的转化" class="headerlink" title="下标和值的转化"></a>下标和值的转化</h3><p>交换dp方程中的下标和值,有时可以优化状态数或者转移,例如使决策具有单调性.</p>
-<h3 id="答案长什么样"><a href="#答案长什么样" class="headerlink" title="答案长什么样?"></a>答案长什么样?</h3>
+<h3 id="答案长什么样"><a href="#答案长什么样" class="headerlink" title="答案长什么样?"></a>答案长什么样?</h3><h3 id="哪一类特殊的解已经可以覆盖所有情况"><a href="#哪一类特殊的解已经可以覆盖所有情况" class="headerlink" title="哪一类特殊的解已经可以覆盖所有情况?"></a>哪一类特殊的解已经可以覆盖所有情况?</h3>
       
     </div>
 
@@ -644,7 +644,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#序列分割"><span class="nav-number">1.</span> <span class="nav-text">序列分割</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“DP套贪心”"><span class="nav-number">2.</span> <span class="nav-text">“DP套贪心”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制分组"><span class="nav-number">3.</span> <span class="nav-text">二进制分组.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树上路径第k小"><span class="nav-number">4.</span> <span class="nav-text">树上路径第k小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sum-与-prod-的转化"><span class="nav-number">5.</span> <span class="nav-text">$\sum$与$\prod$的转化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于xor的随机化方法"><span class="nav-number">6.</span> <span class="nav-text">基于xor的随机化方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对值转-max"><span class="nav-number">7.</span> <span class="nav-text">绝对值转$\max$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下标和值的转化"><span class="nav-number">8.</span> <span class="nav-text">下标和值的转化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#答案长什么样"><span class="nav-number">9.</span> <span class="nav-text">答案长什么样?</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#序列分割"><span class="nav-number">1.</span> <span class="nav-text">序列分割</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“DP套贪心”"><span class="nav-number">2.</span> <span class="nav-text">“DP套贪心”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制分组"><span class="nav-number">3.</span> <span class="nav-text">二进制分组.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树上路径第k小"><span class="nav-number">4.</span> <span class="nav-text">树上路径第k小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sum-与-prod-的转化"><span class="nav-number">5.</span> <span class="nav-text">$\sum$与$\prod$的转化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于xor的随机化方法"><span class="nav-number">6.</span> <span class="nav-text">基于xor的随机化方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对值转-max"><span class="nav-number">7.</span> <span class="nav-text">绝对值转$\max$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下标和值的转化"><span class="nav-number">8.</span> <span class="nav-text">下标和值的转化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#答案长什么样"><span class="nav-number">9.</span> <span class="nav-text">答案长什么样?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哪一类特殊的解已经可以覆盖所有情况"><span class="nav-number">10.</span> <span class="nav-text">哪一类特殊的解已经可以覆盖所有情况?</span></a></li></ol></div>
             
 
           </div>
