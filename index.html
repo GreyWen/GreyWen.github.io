@@ -332,6 +332,172 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/27/jzoj6226-纳什均衡/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wgr45097">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wgr45097's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/27/jzoj6226-纳什均衡/" class="post-title-link" itemprop="url">jzoj6226 纳什均衡</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-27 12:41:19 / Modified: 12:57:06" itemprop="dateCreated datePublished" datetime="2019-06-27T12:41:19+08:00">2019-06-27</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/动态规划/" itemprop="url" rel="index"><span itemprop="name">动态规划</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>枚举$k^{2}$种重链最后指向的叶子的$(c_{0},d_{0})$.<br>设$dp[x][0/1][0/1][0/1]$为四元组(A在子树x里的决策,B在子树x里的决策,子树x里权值c的分布,子树x里权值d的分布)的数量,满足:</p>
+<ol>
+<li>A独自改变策略能/否使自己的得分超过$c_{0}$.</li>
+<li>B独自改变策略能/否使自己的得分超过$d_{0}$.</li>
+<li>按现有的决策从$x$出发,最终到达的叶子权值是否为$(c_{0},d_{0})$.<br>这样做$k^{2}$次树形DP,每次的$dp[\text{root}][0][0][1]$就统计了结果为$(c_{0},d_{0})$的纳什均衡点(视作一个四元组)的个数.<br>因为我们枚举了所有可能的结果,且结果不同的纳什均衡点必不相同,所以这样的统计是不重不漏的.</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/20/min25筛/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1337,7 +1503,7 @@ Y^{M}=\{f|f:M\rightarrow Y\}</script><p>即所有$M$到$Y$的函数,就是所有
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-06-24 18:48:04" itemprop="dateModified" datetime="2019-06-24T18:48:04+08:00">2019-06-24</time>
+                <time title="Modified: 2019-06-26 22:39:33" itemprop="dateModified" datetime="2019-06-26T22:39:33+08:00">2019-06-26</time>
               
             
           </span>
@@ -1405,6 +1571,7 @@ Y^{M}=\{f|f:M\rightarrow Y\}</script><p>即所有$M$到$Y$的函数,就是所有
 <li>两个<code>long long</code>相乘,对一个<code>int</code>取模时,要先各自取模,相乘后再取模.</li>
 <li>形参是<code>int</code>时,即使传入一个<code>long long</code>的实参,也会先被转为<code>int</code>.</li>
 <li>多测要清空.</li>
+<li>动态开点的数据结构要算好总点数,必要时进行垃圾回收.</li>
 </ol>
 <h2 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h2><ol>
 <li>写每个程序片段时一定要明确它的作用和适用范围(例如”合并两个凸包,需要保证传入的每个凸包内两点不重合,三点不共线”),写完代码一定要在头脑中梳理一遍程序的流程.</li>
@@ -1412,6 +1579,15 @@ Y^{M}=\{f|f:M\rightarrow Y\}</script><p>即所有$M$到$Y$的函数,就是所有
 <li>打表找规律.</li>
 <li>对一个迭代的过程,一定要想清楚它的invariant是什么.</li>
 <li>分Subtask大力讨论的题性价比高,因为写错一部分几乎不影响另一部分.</li>
+<li>You must know exactly what each piece of code is doing, even if you do not understand why they are correct.</li>
+<li>变量名应该易于区分且简洁明了.</li>
+<li>当不同部分的变量重名时,可以使用<code>namespace</code>替代把一组变量名加上前缀或后缀的做法.</li>
+</ol>
+<h2 id="卡常经验"><a href="#卡常经验" class="headerlink" title="卡常经验"></a>卡常经验</h2><ol>
+<li>乘法较慢,除法非常慢.位运算很快.</li>
+<li><code>bitset</code>很快,有时候需要手动封装一个<code>bitset</code>,以避免性能退化.</li>
+<li>高频率地执行关于某个变量的简单表达式时,<code>register</code>可能有很好的效果.</li>
+<li>结构体比数组慢.</li>
 </ol>
 
           
@@ -1531,7 +1707,7 @@ Y^{M}=\{f|f:M\rightarrow Y\}</script><p>即所有$M$到$Y$的函数,就是所有
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-06-20 13:45:31" itemprop="dateModified" datetime="2019-06-20T13:45:31+08:00">2019-06-20</time>
+                <time title="Modified: 2019-06-26 22:24:45" itemprop="dateModified" datetime="2019-06-26T22:24:45+08:00">2019-06-26</time>
               
             
           </span>
@@ -1585,7 +1761,8 @@ Y^{M}=\{f|f:M\rightarrow Y\}</script><p>即所有$M$到$Y$的函数,就是所有
       
         
           
-            <h3 id="序列分割"><a href="#序列分割" class="headerlink" title="序列分割"></a>序列分割</h3><p>$\rightarrow$$O(N^{2})$DP+优化,即考虑上一个分割出的区间的结束位置.</p>
+            <p>不全是套路,也有一些思想和方法.</p>
+<h3 id="序列分割"><a href="#序列分割" class="headerlink" title="序列分割"></a>序列分割</h3><p>$\rightarrow$$O(N^{2})$DP+优化,即考虑上一个分割出的区间的结束位置.</p>
 <h3 id="“DP套贪心”"><a href="#“DP套贪心”" class="headerlink" title="“DP套贪心”"></a>“DP套贪心”</h3><p>内层的决策具有贪心性质,或是推导出最优的方案一定具有怎样的性质(如一定优先选较小的等),再以此DP.</p>
 <h3 id="二进制分组"><a href="#二进制分组" class="headerlink" title="二进制分组."></a>二进制分组.</h3><p>要枚举所有的$(x, y),x\neq y$时,如果不容易去掉$x\neq y$ 的限制,可以考虑枚举$x,y$的哪一个二进制位不同.注意这样同一个pair可能被枚举多次.</p>
 <h3 id="树上路径第k小"><a href="#树上路径第k小" class="headerlink" title="树上路径第k小"></a>树上路径第k小</h3><p>考虑主席树做序列上区间第k小的过程,只需要类似地维护每个点到根的路径对应的权值线段树,利用树上差分,由四个到根路径的权值线段树可以做差得到一个两点间路径的权值线段树.每次四个点一起跳,二分找第k小即可.</p>
@@ -1595,7 +1772,7 @@ Y^{M}=\{f|f:M\rightarrow Y\}</script><p>即所有$M$到$Y$的函数,就是所有
 <h3 id="基于xor的随机化方法"><a href="#基于xor的随机化方法" class="headerlink" title="基于xor的随机化方法"></a>基于xor的随机化方法</h3><p>利用xor同一个值两次相当于没有做的性质.</p>
 <h3 id="绝对值转-max"><a href="#绝对值转-max" class="headerlink" title="绝对值转$\max$"></a>绝对值转$\max$</h3><p>$|a|=\max\{a,-a\}$</p>
 <h3 id="下标和值的转化"><a href="#下标和值的转化" class="headerlink" title="下标和值的转化"></a>下标和值的转化</h3><p>交换dp方程中的下标和值,有时可以优化状态数或者转移,例如使决策具有单调性.</p>
-
+<h3 id="答案长什么样"><a href="#答案长什么样" class="headerlink" title="答案长什么样?"></a>答案长什么样?</h3>
           
         
       
@@ -2001,156 +2178,13 @@ P = \frac
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/10/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wgr45097">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wgr45097's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/10/hello-world/" class="post-title-link" itemprop="url">My New Blog</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-06-10 23:05:35" itemprop="dateCreated datePublished" datetime="2019-06-10T23:05:35+08:00">2019-06-10</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2190,7 +2224,7 @@ P = \frac
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2223,7 +2257,9 @@ P = \frac
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>

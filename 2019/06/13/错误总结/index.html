@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="wgr45097&#39;s blog">
 <meta property="og:description" content="错误 1ll&amp;lt;&amp;lt;60而不是1&amp;lt;&amp;lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:1234567int main()&amp;#123;    int A[0];    int N = 10;    for (int i = 0; i &amp;lt">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-24T10:48:04.754Z">
+<meta property="og:updated_time" content="2019-06-26T14:39:33.346Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="错误总结">
 <meta name="twitter:description" content="错误 1ll&amp;lt;&amp;lt;60而不是1&amp;lt;&amp;lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:1234567int main()&amp;#123;    int A[0];    int N = 10;    for (int i = 0; i &amp;lt">
@@ -395,7 +395,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-06-24 18:48:04" itemprop="dateModified" datetime="2019-06-24T18:48:04+08:00">2019-06-24</time>
+                <time title="Modified: 2019-06-26 22:39:33" itemprop="dateModified" datetime="2019-06-26T22:39:33+08:00">2019-06-26</time>
               
             
           </span>
@@ -461,6 +461,7 @@
 <li>两个<code>long long</code>相乘,对一个<code>int</code>取模时,要先各自取模,相乘后再取模.</li>
 <li>形参是<code>int</code>时,即使传入一个<code>long long</code>的实参,也会先被转为<code>int</code>.</li>
 <li>多测要清空.</li>
+<li>动态开点的数据结构要算好总点数,必要时进行垃圾回收.</li>
 </ol>
 <h2 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h2><ol>
 <li>写每个程序片段时一定要明确它的作用和适用范围(例如”合并两个凸包,需要保证传入的每个凸包内两点不重合,三点不共线”),写完代码一定要在头脑中梳理一遍程序的流程.</li>
@@ -468,6 +469,15 @@
 <li>打表找规律.</li>
 <li>对一个迭代的过程,一定要想清楚它的invariant是什么.</li>
 <li>分Subtask大力讨论的题性价比高,因为写错一部分几乎不影响另一部分.</li>
+<li>You must know exactly what each piece of code is doing, even if you do not understand why they are correct.</li>
+<li>变量名应该易于区分且简洁明了.</li>
+<li>当不同部分的变量重名时,可以使用<code>namespace</code>替代把一组变量名加上前缀或后缀的做法.</li>
+</ol>
+<h2 id="卡常经验"><a href="#卡常经验" class="headerlink" title="卡常经验"></a>卡常经验</h2><ol>
+<li>乘法较慢,除法非常慢.位运算很快.</li>
+<li><code>bitset</code>很快,有时候需要手动封装一个<code>bitset</code>,以避免性能退化.</li>
+<li>高频率地执行关于某个变量的简单表达式时,<code>register</code>可能有很好的效果.</li>
+<li>结构体比数组慢.</li>
 </ol>
 
       
@@ -580,7 +590,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -613,7 +623,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -653,7 +665,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#错误"><span class="nav-number">1.</span> <span class="nav-text">错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#心得"><span class="nav-number">2.</span> <span class="nav-text">心得</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#错误"><span class="nav-number">1.</span> <span class="nav-text">错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#心得"><span class="nav-number">2.</span> <span class="nav-text">心得</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卡常经验"><span class="nav-number">3.</span> <span class="nav-text">卡常经验</span></a></li></ol></div>
             
 
           </div>
