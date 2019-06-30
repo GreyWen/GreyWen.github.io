@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[卡常]]></title>
+    <url>%2F2019%2F06%2F29%2F%E5%8D%A1%E5%B8%B8%2F</url>
+    <content type="text"><![CDATA[寻址优化普通写法12for(int i = 0; i &lt; n; ++i) dp[a][b][c][d][e]....; 优秀写法123int *f = dp[a][b][c][d][e];for (int i = 0; i &lt; n; ++i) *f....; 取模优化减少不必要的运算123456789inline void add_fc(int *f, int val) &#123; rg int t = 0; for (rg int i = 0; i &lt; m; ++i) &#123; //f[i] = 1ll*f[i]*omega[1ll*i*val%m]%mod; //1300ms f[i] = 1ll*f[i]*omega[t]%mod; t += val; if (t &gt;= m) t -= m; &#125;&#125;]]></content>
+      <categories>
+        <category>知识点</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[jzoj6226 纳什均衡]]></title>
     <url>%2F2019%2F06%2F27%2Fjzoj6226-%E7%BA%B3%E4%BB%80%E5%9D%87%E8%A1%A1%2F</url>
     <content type="text"><![CDATA[枚举$k^{2}$种重链最后指向的叶子的$(c_{0},d_{0})$.设$dp[x][0/1][0/1][0/1]$为四元组(A在子树x里的决策,B在子树x里的决策,子树x里权值c的分布,子树x里权值d的分布)的数量,满足: A独自改变策略能/否使自己的得分超过$c_{0}$. B独自改变策略能/否使自己的得分超过$d_{0}$. 按现有的决策从$x$出发,最终到达的叶子权值是否为$(c_{0},d_{0})$.这样做$k^{2}$次树形DP,每次的$dp[\text{root}][0][0][1]$就统计了结果为$(c_{0},d_{0})$的纳什均衡点(视作一个四元组)的个数.因为我们枚举了所有可能的结果,且结果不同的纳什均衡点必不相同,所以这样的统计是不重不漏的.]]></content>
