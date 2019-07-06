@@ -332,6 +332,221 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/析合树与连续段/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wgr45097">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wgr45097's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/12/析合树与连续段/" class="post-title-link" itemprop="url">析合树与连续段</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-12 15:32:25" itemprop="dateCreated datePublished" datetime="2019-06-12T15:32:25+08:00">2019-06-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-06-20 13:48:16" itemprop="dateModified" datetime="2019-06-20T13:48:16+08:00">2019-06-20</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/知识点/" itemprop="url" rel="index"><span itemprop="name">知识点</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/知识点/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="连续段-本原连续段"><a href="#连续段-本原连续段" class="headerlink" title="连续段 本原连续段"></a>连续段 本原连续段</h2><blockquote>
+<p>定义 子序列 子序列的值</p>
+<p>对于$n$阶排列$p_{1},p_{2},\cdots,p_{n}$,一个子序列$x$是一段连续的下标$\{l_{x},l_{x}+1,\cdots,r_{x}\}$,子序列的值$val(x):=\{p_i:i\in[l_{x},r_{x}]\}$.</p>
+<p>定义 连续段 </p>
+<p>如果子序列$x$的值也是连续的一段,即$r_{x}-l_{x}+1=\max val(x)-\min val(x)+1$,则称$x$为连续段.</p>
+<p>另一种等价定义是,子序列$x$是连续段当且仅当它的值中有$|x|-1$个恰好相差1的无序二元组$\{b,b+1\}$.</p>
+</blockquote>
+<p>利用连续段的第二定义可以方便的将极长连续段问题转化为区间加法和区间最值问题,可以用可持久化线段树维护.</p>
+<blockquote>
+<p>引理1 </p>
+<p>容易证明,如果两个连续段$x,y$部分相交(即相交但不包含),则$x\cap y,x\cup y,x\backslash x\cap y,y\backslash x\cap y$也都是连续段.</p>
+<p>定义 本原连续段 非本原连续段</p>
+<p>如果某个连续段$x$满足,不存在连续段$y$与$x$部分相交,则称$x$是本原连续段;否则称$x$是非本原连续段.</p>
+<p>引理2</p>
+<p>每个非本原连续段$x$一定能表示为若干个本原连续段的并.<br>证明:<br>长度为1的连续段显然都是本原连续段.<br>设$x$是非本原连续段,则$|x|&gt;1$.设$y$是某个与$x$部分相交的连续段.则$x_{1}=x\cap y,x_{2}=x\backslash x\cap y$都是连续段,且$0&lt;|x_{1}|,|x_{2}|&lt;|x|$.根据归纳假设,$x_{1},x_{2}$都可以被表示为若干(一个或多个)本原连续段的并,于是只需将$x_{1},x_{2}$的表示合并,就得到了$x$的表示.</p>
+</blockquote>
+<h2 id="析合树"><a href="#析合树" class="headerlink" title="析合树"></a>析合树</h2><blockquote>
+<p>定义 析合树<br>设全体本原连续段构成的集合为$M$,则$M$中的任意两个元素要么不相交,要么包含.<br>$M$配备了子集偏序关系$\subseteq$后形成偏序集.这个偏序集与一个有根树$T$一一对应,满足树上节点一一对应$M$中元素,树上的祖先后代关系一一对应子集偏序关系.<br>如果将$T$的每个节点的儿子按照对应的连续段的下标的自然顺序排序,得到的有根有序树就称作排列$p$对应的析合树.</p>
+<p>定义 儿子排列</p>
+<p>对于析合树上的一个非叶节点$x$,设它有$m$个儿子,将其儿子按照值域顺序重新赋$[1,m]$的值,得到一个$m$阶排列$q_{1}, q_{2},\cdots,q_{m},$称为$x$的儿子排列.</p>
+<p>引理3 析合性质</p>
+<p>析合树上的每个非叶节点$x$,一定满足以下两个性质中的恰好一个:</p>
+<ol>
+<li>儿子排列的非平凡子序列都是连续的.</li>
+<li>儿子排列的非平凡子序列都不是连续的.</li>
+</ol>
+<p>证明:</p>
+<p>设儿子排列有某个非平凡连续段$h$.</p>
+<p>注意到$h$一定是非本原的(因为若不然,一定可以将$h$覆盖的儿子合并为一个新的本原连续段,作为$x$的新儿子),因此存在与$h$部分相交的$h^{\prime}$.令$h\leftarrow h\cup h^{\prime}$,则$|h|$一定增大了,如此迭代下去,就找到了一组非平凡非本原连续段,它们的并是整个排列.</p>
+<p>现在我们证明,对于任意一个非平凡连续段$h$,$h$覆盖的所有位置都是某个非平凡连续段的左端点和某个非平凡连续段的右端点.</p>
+<p>…</p>
+<p>于是,将以$1,2,\cdots,i$结尾的非平凡连续段依次取并,可以证明所有的前缀都是连续段;同理所有的后缀都是连续段.将前缀和后缀两两取交,就证明了所有的非平凡段都是连续的.</p>
+</blockquote>
+<h3 id="析合树的构造"><a href="#析合树的构造" class="headerlink" title="析合树的构造"></a>析合树的构造</h3><p>如果给定一个析点或合点代表的区间,能求出它的儿子代表的区间,我们就可以递归地进行这个过程,构造出析合树.<br>另一个问题是判断一个点是析点还是合点.</p>
+<h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><p>这是CERC2017 “Intrinsic Interval”一题的AC代码.此代码不是原创,在转载时添加了一些自己的注释.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pct puts(<span class="meta-string">"------ visit ------"</span>);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(a, b, c) for(int a = (b); a &lt;= (c); ++ a)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> per(a, b, c) for(int a = (b); a &gt;= (c); -- a)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt; <span class="title">void</span> <span class="title">rd</span>(<span class="title">T</span> &amp;<span class="title">x</span>)&#123;</span></span><br><span class="line">  x = <span class="number">0</span>; <span class="keyword">int</span> f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">  <span class="keyword">while</span>(ch &lt; <span class="string">'0'</span> || ch &gt; <span class="string">'9'</span>)&#123; <span class="keyword">if</span>(ch == <span class="string">'-'</span>) f = <span class="number">-1</span>; ch = getchar(); &#125;</span><br><span class="line">  <span class="keyword">while</span>(ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>) x = x * <span class="number">10</span> + ch - <span class="string">'0'</span>, ch = getchar();</span><br><span class="line">  x *= f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> pair &lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> a[maxn], b[maxn];</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">persistent_segment_tree</span>&#123;</span></span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> ls, rs;</span><br><span class="line">    <span class="keyword">int</span> ad, mi;</span><br><span class="line">  &#125;tr[maxn * <span class="number">70</span>];</span><br><span class="line">  <span class="keyword">int</span> rt[maxn], idx;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ls tr[u].ls</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rs tr[u].rs</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lson ls, l, mid</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rson rs, mid + 1, r</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">newnode</span><span class="params">(<span class="keyword">int</span> &amp;u)</span></span>&#123;</span><br><span class="line">    tr[++ idx] = tr[u];</span><br><span class="line">    u = idx;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">addv</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">    tr[u].ad += v;</span><br><span class="line">    tr[u].mi += v;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">pushdown</span><span class="params">(<span class="keyword">int</span> u)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tr[u].ad)&#123;</span><br><span class="line">      newnode(ls);</span><br><span class="line">      newnode(rs);</span><br><span class="line">      addv(ls, tr[u].ad);</span><br><span class="line">      addv(rs, tr[u].ad);</span><br><span class="line">      tr[u].ad = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">pushup</span><span class="params">(<span class="keyword">int</span> u)</span></span>&#123;</span><br><span class="line">    tr[u].mi = min(tr[ls].mi, tr[rs].mi);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> &amp;u, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    u = ++ idx;</span><br><span class="line">    <span class="keyword">if</span>(l == r) <span class="keyword">return</span> (<span class="keyword">void</span>) (tr[u].mi = <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    build(lson), build(rson);</span><br><span class="line">    pushup(u);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> &amp;u, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr, <span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">    newnode(u);</span><br><span class="line">    <span class="keyword">if</span>(ql &lt;= l &amp;&amp; r &lt;= qr) <span class="keyword">return</span> (<span class="keyword">void</span>) (addv(u, v));</span><br><span class="line">    <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    pushdown(u);</span><br><span class="line">    <span class="keyword">if</span>(ql &lt;= mid) update(lson, ql, qr, v);</span><br><span class="line">    <span class="keyword">if</span>(qr &gt; mid) update(rson, ql, qr, v);</span><br><span class="line">    pushup(u);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//val &gt;= 1 at all times</span></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr)</span></span>&#123;<span class="comment">//leftmost pos with val == 1</span></span><br><span class="line">    <span class="keyword">if</span>(ql &lt;= l &amp;&amp; r &lt;= qr)&#123;</span><br><span class="line">      <span class="keyword">if</span>(tr[u].mi == <span class="number">1</span>)&#123;</span><br><span class="line">	<span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	pushdown(u);</span><br><span class="line">	<span class="keyword">if</span>(l == r) <span class="keyword">return</span> l;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(tr[ls].mi == <span class="number">1</span>) <span class="keyword">return</span> query(lson, ql, qr);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> query(rson, ql, qr);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    pushdown(u);</span><br><span class="line">    <span class="keyword">if</span>(ql &lt;= mid)&#123;</span><br><span class="line">      <span class="keyword">int</span> res = query(lson, ql, qr);</span><br><span class="line">      <span class="keyword">if</span>(res != <span class="number">-1</span>) <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(qr &gt; mid) <span class="keyword">return</span> query(rson, ql, qr);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">()</span></span>&#123;</span><br><span class="line">    build(rt[<span class="number">1</span>], <span class="number">1</span>, n);</span><br><span class="line">    rep(i, <span class="number">1</span>, n) b[a[i]] = i;</span><br><span class="line">    rep(i, <span class="number">2</span>, n)&#123;</span><br><span class="line">      rt[i] = rt[i - <span class="number">1</span>];</span><br><span class="line">      update(rt[i], <span class="number">1</span>, n, <span class="number">1</span>, i - <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">      <span class="keyword">if</span>(a[i] &gt; <span class="number">1</span> &amp;&amp; b[a[i] - <span class="number">1</span>] &lt; i) update(rt[i], <span class="number">1</span>, n, <span class="number">1</span>, b[a[i] - <span class="number">1</span>], <span class="number">-1</span>);</span><br><span class="line">      <span class="keyword">if</span>(a[i] &lt; n &amp;&amp; b[a[i] + <span class="number">1</span>] &lt; i) update(rt[i], <span class="number">1</span>, n, <span class="number">1</span>, b[a[i] + <span class="number">1</span>], <span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;pr, sf;<span class="comment">//prefix, suffix</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rev(x) n + 1 - (x)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxs = maxn * <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">postive_differ_tree</span>&#123;</span></span><br><span class="line">  <span class="keyword">int</span> pos[maxs], op[maxs];</span><br><span class="line">  <span class="keyword">int</span> pre[maxs][<span class="number">21</span>], dep[maxs];</span><br><span class="line">  pii bound[maxs];</span><br><span class="line">  <span class="keyword">int</span> idx, rt;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt; e[maxs];</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">adde</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span></span>&#123; e[u].push_back(v); &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> &amp;u, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    u = ++ idx;</span><br><span class="line">    bound[u] = pii(l, r);</span><br><span class="line">    <span class="keyword">if</span>(l == r)&#123;</span><br><span class="line">      pos[l] = u;</span><br><span class="line">      <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//query(pr.rt[cur], 1, n, ql, qr) leftmost pos in [ql, qr] s.t. [pos, cur] is continuous</span></span><br><span class="line">    <span class="keyword">int</span> x = pr.query(pr.rt[r], <span class="number">1</span>, n, l + <span class="number">1</span>, r);</span><br><span class="line">    <span class="keyword">int</span> y = rev(sf.query(sf.rt[rev(l)], <span class="number">1</span>, n, rev(r - <span class="number">1</span>), rev(l)));</span><br><span class="line">    <span class="keyword">int</span> lst = l;</span><br><span class="line">    <span class="keyword">if</span>(y &lt; x - <span class="number">1</span>)&#123;<span class="comment">//cannot cover the whole interval [l, r]</span></span><br><span class="line">      op[u] = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">int</span> v;</span><br><span class="line">      <span class="keyword">while</span>(y != x - <span class="number">1</span>)&#123;</span><br><span class="line">	divide(v, lst, y), adde(u, v);</span><br><span class="line">	lst = y + <span class="number">1</span>;</span><br><span class="line">	y = rev(sf.query(sf.rt[rev(lst)], <span class="number">1</span>, n, rev(r - <span class="number">1</span>), rev(lst)));</span><br><span class="line">      &#125;</span><br><span class="line">      divide(v, lst, y); adde(u, v);</span><br><span class="line">      divide(v, y + <span class="number">1</span>, r); adde(u, v);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">      op[u] = <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">int</span> v;</span><br><span class="line">      <span class="keyword">while</span>(y != x - <span class="number">1</span>)&#123;</span><br><span class="line">	divide(v, lst, x - <span class="number">1</span>); adde(u, v);</span><br><span class="line">	lst = x;</span><br><span class="line">	x = pr.query(pr.rt[r], <span class="number">1</span>, n, x + <span class="number">1</span>, r);</span><br><span class="line">      &#125;</span><br><span class="line">      divide(v, lst, x - <span class="number">1</span>); adde(u, v);</span><br><span class="line">      divide(v, x, r); adde(u, v);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; e[u].size(); ++ i)&#123;</span><br><span class="line">      <span class="keyword">int</span> v = e[u][i];</span><br><span class="line">      dep[v] = dep[u] + <span class="number">1</span>;</span><br><span class="line">      pre[v][<span class="number">0</span>] = u;</span><br><span class="line">      rep(j, <span class="number">1</span>, <span class="number">20</span>) pre[v][j] = pre[pre[v][j - <span class="number">1</span>]][j - <span class="number">1</span>];</span><br><span class="line">      dfs(v);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">lca</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(dep[a] &gt; dep[b]) swap(a, b);</span><br><span class="line">    per(i, <span class="number">20</span>, <span class="number">0</span>) <span class="keyword">if</span>(dep[a] &lt;= dep[b] - (<span class="number">1</span> &lt;&lt; i)) b = pre[b][i];</span><br><span class="line">    <span class="keyword">if</span>(a == b) <span class="keyword">return</span> a;</span><br><span class="line">    per(i, <span class="number">20</span>, <span class="number">0</span>) <span class="keyword">if</span>(pre[a][i] != pre[b][i]) a = pre[a][i], b = pre[b][i];</span><br><span class="line">    <span class="keyword">return</span> pre[a][<span class="number">0</span>];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">()</span></span>&#123;</span><br><span class="line">    divide(rt, <span class="number">1</span>, n);</span><br><span class="line">    dfs(<span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function">pii <span class="title">query</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l == r) <span class="keyword">return</span> pii(l, r);</span><br><span class="line">    <span class="keyword">int</span> u = lca(pos[l], pos[r]);</span><br><span class="line">    <span class="keyword">if</span>(op[u] == <span class="number">0</span>) <span class="keyword">return</span> bound[u];<span class="comment">//xi1 </span></span><br><span class="line">    pii res;</span><br><span class="line">    <span class="keyword">int</span> sz = e[u].size();</span><br><span class="line">    <span class="keyword">int</span> ql, qr;</span><br><span class="line">    ql = <span class="number">0</span>, qr = sz - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(qr - ql &gt; <span class="number">1</span>)&#123;</span><br><span class="line">      <span class="keyword">int</span> mid = ql + qr &gt;&gt; <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">if</span>(bound[e[u][mid]].first &lt;= l) ql = mid;</span><br><span class="line">      <span class="keyword">else</span> qr = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    res.first = bound[e[u][ql]].first;</span><br><span class="line">    ql = <span class="number">0</span>, qr = sz - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(qr - ql &gt; <span class="number">1</span>)&#123;</span><br><span class="line">      <span class="keyword">int</span> mid = ql + qr &gt;&gt; <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">if</span>(bound[e[u][mid]].second &gt;= r) qr = mid;</span><br><span class="line">      <span class="keyword">else</span> ql = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    res.second = bound[e[u][qr]].second;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;pdt;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sol</span><span class="params">()</span></span>&#123;</span><br><span class="line">  rd(m);</span><br><span class="line">  <span class="keyword">while</span>(m --)&#123;</span><br><span class="line">    <span class="keyword">int</span> l, r; rd(l), rd(r);</span><br><span class="line">    pii res = pdt.query(l, r);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>, res.first, res.second);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  freopen(<span class="string">"c.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">  freopen(<span class="string">"c.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">  rd(n);</span><br><span class="line">  rep(i, <span class="number">1</span>, n) rd(a[i]);</span><br><span class="line">  pr.build();</span><br><span class="line">  reverse(a + <span class="number">1</span>, a + n + <span class="number">1</span>);</span><br><span class="line">  sf.build();</span><br><span class="line">  pdt.build();</span><br><span class="line">  sol();</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/11/MathJax-Test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -660,7 +875,7 @@ P = \frac
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -695,7 +910,11 @@ P = \frac
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -1206,6 +1425,8 @@ P = \frac
     
       
         
+      
+    
       
     
       

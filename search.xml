@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[2019.07.06模拟赛]]></title>
+    <url>%2F2019%2F07%2F06%2F2019-07-06%E6%A8%A1%E6%8B%9F%E8%B5%9B%2F</url>
+    <content type="text"><![CDATA[T1DP处理出A,B,C拼成某个时刻的最小代价.枚举所有的$(a,b,(a+b)%1440)$. T2转化一下题意:一个左右部各有n个点的图,两部分内部共连了n-1条边,现在要在两部间连n条边,形成完备匹配,且使最终得到的图是一棵树.先处理出左右部的连通块,考虑枚举每一个左部块,用它将某些右部块连通的过程.我们只关心每个右部块内还有多少点可以被连边,故可以将状态表示为(左部的块考虑到第几个,右部每个块的可连边的点有几个),即一个(int, multiset&lt;int&gt;).转移时考虑一下系数即可. T3转化题意:一个$n*n$的网格中,每条往右下的路径,起点,终点对其权值有贡献,每往左或下走也有贡献.求所有路径的权值和.]]></content>
+      <categories>
+        <category>中山纪念中学</category>
+        <category>模拟赛</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[卡常]]></title>
     <url>%2F2019%2F06%2F29%2F%E5%8D%A1%E5%B8%B8%2F</url>
     <content type="text"><![CDATA[寻址优化普通写法12for(int i = 0; i &lt; n; ++i) dp[a][b][c][d][e]....; 优秀写法123int *f = dp[a][b][c][d][e];for (int i = 0; i &lt; n; ++i) *f....; 取模优化减少不必要的运算123456789inline void add_fc(int *f, int val) &#123; rg int t = 0; for (rg int i = 0; i &lt; m; ++i) &#123; //f[i] = 1ll*f[i]*omega[1ll*i*val%m]%mod; //1300ms f[i] = 1ll*f[i]*omega[t]%mod; t += val; if (t &gt;= m) t -= m; &#125;&#125;]]></content>

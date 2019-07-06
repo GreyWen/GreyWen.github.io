@@ -96,13 +96,17 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="wgr45097&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2019/06/index.html">
+  <meta name="description" content="T1DP处理出A,B,C拼成某个时刻的最小代价.枚举所有的$(a,b,(a+b)%1440)$. T2转化一下题意:一个左右部各有n个点的图,两部分内部共连了n-1条边,现在要在两部间连n条边,形成完备匹配,且使最终得到的图是一棵树.先处理出左右部的连通块,考虑枚举每一个左部块,用它将某些右部块连通的过程.我们只关心每个右部块内还有多少点可以被连边,故可以将状态表示为(左部的块考虑到第几个,右部每">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.07.06模拟赛">
+<meta property="og:url" content="http://yoursite.com/2019/07/06/2019-07-06模拟赛/index.html">
 <meta property="og:site_name" content="wgr45097&#39;s blog">
+<meta property="og:description" content="T1DP处理出A,B,C拼成某个时刻的最小代价.枚举所有的$(a,b,(a+b)%1440)$. T2转化一下题意:一个左右部各有n个点的图,两部分内部共连了n-1条边,现在要在两部间连n条边,形成完备匹配,且使最终得到的图是一棵树.先处理出左右部的连通块,考虑枚举每一个左部块,用它将某些右部块连通的过程.我们只关心每个右部块内还有多少点可以被连边,故可以将状态表示为(左部的块考虑到第几个,右部每">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-06T10:13:30.759Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wgr45097&#39;s blog">
+<meta name="twitter:title" content="2019.07.06模拟赛">
+<meta name="twitter:description" content="T1DP处理出A,B,C拼成某个时刻的最小代价.枚举所有的$(a,b,(a+b)%1440)$. T2转化一下题意:一个左右部各有n个点的图,两部分内部共连了n-1条边,现在要在两部间连n条边,形成完备匹配,且使最终得到的图是一棵树.先处理出左右部的连通块,考虑枚举每一个左部块,用它将某些右部块连通的过程.我们只关心每个右部块内还有多少点可以被连边,故可以将状态表示为(左部的块考虑到第几个,右部每">
 
 
 
@@ -110,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/archives/2019/06/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/06/2019-07-06模拟赛/">
 
 
 
@@ -120,7 +124,7 @@
   };
 </script>
 
-  <title>Archive | wgr45097's blog</title>
+  <title>2019.07.06模拟赛 | wgr45097's blog</title>
   
 
 
@@ -168,7 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -240,7 +244,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -269,22 +273,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -331,397 +319,195 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/06/2019-07-06模拟赛/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wgr45097">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wgr45097's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">2019.07.06模拟赛
+
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-06 18:00:40 / Modified: 18:13:30" itemprop="dateCreated datePublished" datetime="2019-07-06T18:00:40+08:00">2019-07-06</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-        
-        Um..! 13 posts in total. Keep on posting.
-      </span>
-      
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/中山纪念中学/" itemprop="url" rel="index"><span itemprop="name">中山纪念中学</span></a></span>
 
-      
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/中山纪念中学/模拟赛/" itemprop="url" rel="index"><span itemprop="name">模拟赛</span></a></span>
 
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/06/29/卡常/" itemprop="url">
+          
             
-              <span itemprop="name">卡常</span>
             
-          </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-29T23:01:48+08:00" content="2019-06-29">
-          06-29
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
 
+          
 
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/06/27/jzoj6226-纳什均衡/" itemprop="url">
-            
-              <span itemprop="name">jzoj6226 纳什均衡</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-27T12:41:19+08:00" content="2019-06-27">
-          06-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/06/20/min25筛/" itemprop="url">
-            
-              <span itemprop="name">min25筛</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-20T22:15:16+08:00" content="2019-06-20">
-          06-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h3 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h3><p>DP处理出A,B,C拼成某个时刻的最小代价.枚举所有的$(a,b,(a+b)%1440)$.</p>
+<h3 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h3><p>转化一下题意:一个左右部各有n个点的图,两部分内部共连了n-1条边,现在要在两部间连n条边,形成完备匹配,且使最终得到的图是一棵树.<br>先处理出左右部的连通块,考虑枚举每一个左部块,用它将某些右部块连通的过程.我们只关心每个右部块内还有多少点可以被连边,故可以将状态表示为(左部的块考虑到第几个,右部每个块的可连边的点有几个),即一个<code>(int, multiset&lt;int&gt;)</code>.<br>转移时考虑一下系数即可.</p>
+<h3 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h3><p>转化题意:一个$n*n$的网格中,每条往右下的路径,起点,终点对其权值有贡献,每往左或下走也有贡献.求所有路径的权值和.</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/06/20/Burnside引理与Polya原理/" itemprop="url">
-            
-              <span itemprop="name">Burnside引理与Polya原理</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-20T13:23:01+08:00" content="2019-06-20">
-          06-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/06/17/集合幂级数/" itemprop="url">
-            
-              <span itemprop="name">集合幂级数</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-17T22:34:59+08:00" content="2019-06-17">
-          06-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/06/15/2019-06-13模拟赛/" itemprop="url">
-            
-              <span itemprop="name">2019.06.13模拟赛</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-15T00:17:34+08:00" content="2019-06-15">
-          06-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/06/14/2019-06-14模拟赛/" itemprop="url">
-            
-              <span itemprop="name">2019.06.14模拟赛</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-14T18:48:29+08:00" content="2019-06-14">
-          06-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/06/13/错误总结/" itemprop="url">
-            
-              <span itemprop="name">错误总结</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-13T18:06:21+08:00" content="2019-06-13">
-          06-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/06/13/套路总结/" itemprop="url">
-            
-              <span itemprop="name">套路总结</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-13T18:05:23+08:00" content="2019-06-13">
-          06-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/06/12/析合树与连续段/" itemprop="url">
-            
-              <span itemprop="name">析合树与连续段</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-12T15:32:25+08:00" content="2019-06-12">
-          06-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/29/卡常/" rel="next" title="卡常">
+                <i class="fa fa-chevron-left"></i> 卡常
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2019/06/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/06/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -741,8 +527,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -825,6 +620,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#T1"><span class="nav-number">1.</span> <span class="nav-text">T1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T2"><span class="nav-number">2.</span> <span class="nav-text">T2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T3"><span class="nav-number">3.</span> <span class="nav-text">T3</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -953,6 +765,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
 
   
 
@@ -968,6 +784,8 @@
 
   
 
+
+  
 
 
   
@@ -1305,6 +1123,46 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
