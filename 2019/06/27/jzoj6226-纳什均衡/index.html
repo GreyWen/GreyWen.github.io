@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="枚举$k^{2}$种重链最后指向的叶子的$(c_{0},d_{0})$.设$dp[x][0/1][0/1][0/1]$为四元组(A在子树x里的决策,B在子树x里的决策,子树x里权值c的分布,子树x里权值d的分布)的数量,满足:  A独自改变策略能/否使自己的得分超过$c_{0}$. B独自改变策略能/否使自己的得分超过$d_{0}$. 按现有的决策从$x$出发,最终到达的叶子权值是否为$(c_{0">
+  <meta name="description" content="枚举k2k^{2}k2种重链最后指向的叶子的(c0,d0)(c_{0},d_{0})(c0​,d0​). 设dp[x][0/1][0/1][0/1]dp[x][0/1][0/1][0/1]dp[x][0/1][0/1][0/1]为四元组(A在子树x里的决策,B在子树x里的决策,子树x里权值c的分布,子树x里权值d的分布)的数量,满足:  A独自改变策略能/否使自己的得分超过c0c_{0}c0​.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jzoj6226 纳什均衡">
 <meta property="og:url" content="http://yoursite.com/2019/06/27/jzoj6226-纳什均衡/index.html">
 <meta property="og:site_name" content="wgr45097&#39;s blog">
-<meta property="og:description" content="枚举$k^{2}$种重链最后指向的叶子的$(c_{0},d_{0})$.设$dp[x][0/1][0/1][0/1]$为四元组(A在子树x里的决策,B在子树x里的决策,子树x里权值c的分布,子树x里权值d的分布)的数量,满足:  A独自改变策略能/否使自己的得分超过$c_{0}$. B独自改变策略能/否使自己的得分超过$d_{0}$. 按现有的决策从$x$出发,最终到达的叶子权值是否为$(c_{0">
+<meta property="og:description" content="枚举k2k^{2}k2种重链最后指向的叶子的(c0,d0)(c_{0},d_{0})(c0​,d0​). 设dp[x][0/1][0/1][0/1]dp[x][0/1][0/1][0/1]dp[x][0/1][0/1][0/1]为四元组(A在子树x里的决策,B在子树x里的决策,子树x里权值c的分布,子树x里权值d的分布)的数量,满足:  A独自改变策略能/否使自己的得分超过c0c_{0}c0​.">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-06-27T04:57:06.082Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jzoj6226 纳什均衡">
-<meta name="twitter:description" content="枚举$k^{2}$种重链最后指向的叶子的$(c_{0},d_{0})$.设$dp[x][0/1][0/1][0/1]$为四元组(A在子树x里的决策,B在子树x里的决策,子树x里权值c的分布,子树x里权值d的分布)的数量,满足:  A独自改变策略能/否使自己的得分超过$c_{0}$. B独自改变策略能/否使自己的得分超过$d_{0}$. 按现有的决策从$x$出发,最终到达的叶子权值是否为$(c_{0">
+<meta name="twitter:description" content="枚举k2k^{2}k2种重链最后指向的叶子的(c0,d0)(c_{0},d_{0})(c0​,d0​). 设dp[x][0/1][0/1][0/1]dp[x][0/1][0/1][0/1]dp[x][0/1][0/1][0/1]为四元组(A在子树x里的决策,B在子树x里的决策,子树x里权值c的分布,子树x里权值d的分布)的数量,满足:  A独自改变策略能/否使自己的得分超过c0c_{0}c0​.">
 
 
 
@@ -435,11 +435,14 @@
       
 
       
-        <p>枚举$k^{2}$种重链最后指向的叶子的$(c_{0},d_{0})$.<br>设$dp[x][0/1][0/1][0/1]$为四元组(A在子树x里的决策,B在子树x里的决策,子树x里权值c的分布,子树x里权值d的分布)的数量,满足:</p>
+        <p>枚举<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>k</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">k^{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span>种重链最后指向的叶子的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><msub><mi>c</mi><mn>0</mn></msub><mo separator="true">,</mo><msub><mi>d</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(c_{0},d_{0})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>.<br>
+设<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi><mo stretchy="false">[</mo><mi>x</mi><mo stretchy="false">]</mo><mo stretchy="false">[</mo><mn>0</mn><mi mathvariant="normal">/</mi><mn>1</mn><mo stretchy="false">]</mo><mo stretchy="false">[</mo><mn>0</mn><mi mathvariant="normal">/</mi><mn>1</mn><mo stretchy="false">]</mo><mo stretchy="false">[</mo><mn>0</mn><mi mathvariant="normal">/</mi><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">dp[x][0/1][0/1][0/1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">p</span><span class="mopen">[</span><span class="mord mathdefault">x</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord">0</span><span class="mord">/</span><span class="mord">1</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord">0</span><span class="mord">/</span><span class="mord">1</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord">0</span><span class="mord">/</span><span class="mord">1</span><span class="mclose">]</span></span></span></span>为四元组(A在子树x里的决策,B在子树x里的决策,子树x里权值c的分布,子树x里权值d的分布)的数量,满足:</p>
 <ol>
-<li>A独自改变策略能/否使自己的得分超过$c_{0}$.</li>
-<li>B独自改变策略能/否使自己的得分超过$d_{0}$.</li>
-<li>按现有的决策从$x$出发,最终到达的叶子权值是否为$(c_{0},d_{0})$.<br>这样做$k^{2}$次树形DP,每次的$dp[\text{root}][0][0][1]$就统计了结果为$(c_{0},d_{0})$的纳什均衡点(视作一个四元组)的个数.<br>因为我们枚举了所有可能的结果,且结果不同的纳什均衡点必不相同,所以这样的统计是不重不漏的.</li>
+<li>A独自改变策略能/否使自己的得分超过<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>c</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">c_{0}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.</li>
+<li>B独自改变策略能/否使自己的得分超过<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>d</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">d_{0}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.</li>
+<li>按现有的决策从<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>出发,最终到达的叶子权值是否为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><msub><mi>c</mi><mn>0</mn></msub><mo separator="true">,</mo><msub><mi>d</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(c_{0},d_{0})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>.<br>
+这样做<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>k</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">k^{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span>次树形DP,每次的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi><mo stretchy="false">[</mo><mtext>root</mtext><mo stretchy="false">]</mo><mo stretchy="false">[</mo><mn>0</mn><mo stretchy="false">]</mo><mo stretchy="false">[</mo><mn>0</mn><mo stretchy="false">]</mo><mo stretchy="false">[</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">dp[\text{root}][0][0][1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">p</span><span class="mopen">[</span><span class="mord text"><span class="mord">root</span></span><span class="mclose">]</span><span class="mopen">[</span><span class="mord">0</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord">0</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord">1</span><span class="mclose">]</span></span></span></span>就统计了结果为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><msub><mi>c</mi><mn>0</mn></msub><mo separator="true">,</mo><msub><mi>d</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(c_{0},d_{0})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>的纳什均衡点(视作一个四元组)的个数.<br>
+因为我们枚举了所有可能的结果,且结果不同的纳什均衡点必不相同,所以这样的统计是不重不漏的.</li>
 </ol>
 
       
@@ -543,7 +546,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -582,7 +585,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -1099,42 +1106,8 @@
 
   
     
-      <script type="text/x-mathjax-config">
-  
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
 
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
   

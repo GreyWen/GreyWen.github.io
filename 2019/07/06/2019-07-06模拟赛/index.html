@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="T1DP处理出A,B,C拼成某个时刻的最小代价.枚举所有的$(a,b,(a+b)%1440)$. T2转化一下题意:一个左右部各有n个点的图,两部分内部共连了n-1条边,现在要在两部间连n条边,形成完备匹配,且使最终得到的图是一棵树.先处理出左右部的连通块,考虑枚举每一个左部块,用它将某些右部块连通的过程.我们只关心每个右部块内还有多少点可以被连边,故可以将状态表示为(左部的块考虑到第几个,右部每">
+  <meta name="description" content="T1 DP处理出A,B,C拼成某个时刻的最小代价.枚举所有的(a,b,(a+b)(a,b,(a+b)%1440)(a,b,(a+b).  T2 转化一下题意:一个左右部各有n个点的图,两部分内部共连了n-1条边,现在要在两部间连n条边,形成完备匹配,且使最终得到的图是一棵树. 先处理出左右部的连通块,考虑枚举每一个左部块,用它将某些右部块连通的过程.我们只关心每个右部块内还有多少点可以被连边,故">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2019.07.06模拟赛">
 <meta property="og:url" content="http://yoursite.com/2019/07/06/2019-07-06模拟赛/index.html">
 <meta property="og:site_name" content="wgr45097&#39;s blog">
-<meta property="og:description" content="T1DP处理出A,B,C拼成某个时刻的最小代价.枚举所有的$(a,b,(a+b)%1440)$. T2转化一下题意:一个左右部各有n个点的图,两部分内部共连了n-1条边,现在要在两部间连n条边,形成完备匹配,且使最终得到的图是一棵树.先处理出左右部的连通块,考虑枚举每一个左部块,用它将某些右部块连通的过程.我们只关心每个右部块内还有多少点可以被连边,故可以将状态表示为(左部的块考虑到第几个,右部每">
+<meta property="og:description" content="T1 DP处理出A,B,C拼成某个时刻的最小代价.枚举所有的(a,b,(a+b)(a,b,(a+b)%1440)(a,b,(a+b).  T2 转化一下题意:一个左右部各有n个点的图,两部分内部共连了n-1条边,现在要在两部间连n条边,形成完备匹配,且使最终得到的图是一棵树. 先处理出左右部的连通块,考虑枚举每一个左部块,用它将某些右部块连通的过程.我们只关心每个右部块内还有多少点可以被连边,故">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-07-06T10:13:30.759Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019.07.06模拟赛">
-<meta name="twitter:description" content="T1DP处理出A,B,C拼成某个时刻的最小代价.枚举所有的$(a,b,(a+b)%1440)$. T2转化一下题意:一个左右部各有n个点的图,两部分内部共连了n-1条边,现在要在两部间连n条边,形成完备匹配,且使最终得到的图是一棵树.先处理出左右部的连通块,考虑枚举每一个左部块,用它将某些右部块连通的过程.我们只关心每个右部块内还有多少点可以被连边,故可以将状态表示为(左部的块考虑到第几个,右部每">
+<meta name="twitter:description" content="T1 DP处理出A,B,C拼成某个时刻的最小代价.枚举所有的(a,b,(a+b)(a,b,(a+b)%1440)(a,b,(a+b).  T2 转化一下题意:一个左右部各有n个点的图,两部分内部共连了n-1条边,现在要在两部间连n条边,形成完备匹配,且使最终得到的图是一棵树. 先处理出左右部的连通块,考虑枚举每一个左部块,用它将某些右部块连通的过程.我们只关心每个右部块内还有多少点可以被连边,故">
 
 
 
@@ -442,9 +442,14 @@
       
 
       
-        <h3 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h3><p>DP处理出A,B,C拼成某个时刻的最小代价.枚举所有的$(a,b,(a+b)%1440)$.</p>
-<h3 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h3><p>转化一下题意:一个左右部各有n个点的图,两部分内部共连了n-1条边,现在要在两部间连n条边,形成完备匹配,且使最终得到的图是一棵树.<br>先处理出左右部的连通块,考虑枚举每一个左部块,用它将某些右部块连通的过程.我们只关心每个右部块内还有多少点可以被连边,故可以将状态表示为(左部的块考虑到第几个,右部每个块的可连边的点有几个),即一个<code>(int, multiset&lt;int&gt;)</code>.<br>转移时考虑一下系数即可.</p>
-<h3 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h3><p>转化题意:一个$n*n$的网格中,每条往右下的路径,起点,终点对其权值有贡献,每往左或下走也有贡献.求所有路径的权值和.</p>
+        <h3 id="t1"><a class="markdownIt-Anchor" href="#t1"></a> T1</h3>
+<p>DP处理出A,B,C拼成某个时刻的最小代价.枚举所有的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo separator="true">,</mo><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(a,b,(a+b)%1440)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span></span></span></span>.</p>
+<h3 id="t2"><a class="markdownIt-Anchor" href="#t2"></a> T2</h3>
+<p>转化一下题意:一个左右部各有n个点的图,两部分内部共连了n-1条边,现在要在两部间连n条边,形成完备匹配,且使最终得到的图是一棵树.<br>
+先处理出左右部的连通块,考虑枚举每一个左部块,用它将某些右部块连通的过程.我们只关心每个右部块内还有多少点可以被连边,故可以将状态表示为(左部的块考虑到第几个,右部每个块的可连边的点有几个),即一个<code>(int, multiset&lt;int&gt;)</code>.<br>
+转移时考虑一下系数即可.</p>
+<h3 id="t3"><a class="markdownIt-Anchor" href="#t3"></a> T3</h3>
+<p>转化题意:一个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>∗</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">n*n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>的网格中,每条往右下的路径,起点,终点对其权值有贡献,每往左或下走也有贡献.求所有路径的权值和.</p>
 
       
     </div>
@@ -484,6 +489,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/19/开始学文化课/" rel="prev" title="开始学文化课">
+                开始学文化课 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -552,7 +561,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -591,7 +600,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -631,7 +644,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#T1"><span class="nav-number">1.</span> <span class="nav-text">T1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T2"><span class="nav-number">2.</span> <span class="nav-text">T2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T3"><span class="nav-number">3.</span> <span class="nav-text">T3</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#t1"><span class="nav-number">1.</span> <span class="nav-text"> T1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#t2"><span class="nav-number">2.</span> <span class="nav-text"> T2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#t3"><span class="nav-number">3.</span> <span class="nav-text"> T3</span></a></li></ol></div>
             
 
           </div>
@@ -1125,42 +1138,8 @@
 
   
     
-      <script type="text/x-mathjax-config">
-  
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
 
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
   

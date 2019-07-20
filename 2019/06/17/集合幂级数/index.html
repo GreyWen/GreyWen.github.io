@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="三类常见的位运算or, and, xor分别对应三种位运算卷积,即or卷积, and卷积, xor卷积.如果将二进制数看做集合,上面三种位运算分别对应集合的并,交,对称差.另外,我们还关心集合的不相交并.由此我们引入下面四种位运算卷积的快速算法.对于复数上的普通的卷积$c_n=\sum_{i+j=n}a_{i}b_{j}$,快速算法是先DFT,之后点乘,再IDFT.事实上,下面四种位运算的前三种都">
+  <meta name="description" content="三类常见的位运算or, and, xor分别对应三种位运算卷积,即or卷积, and卷积, xor卷积. 如果将二进制数看做集合,上面三种位运算分别对应集合的并,交,对称差.另外,我们还关心集合的不相交并. 由此我们引入下面四种位运算卷积的快速算法. 对于复数上的普通的卷积cn=∑i+j=naibjc_n=\sum_{i+j=n}a_{i}b_{j}cn​=∑i+j=n​ai​bj​,快速算法是先">
 <meta property="og:type" content="article">
 <meta property="og:title" content="集合幂级数">
 <meta property="og:url" content="http://yoursite.com/2019/06/17/集合幂级数/index.html">
 <meta property="og:site_name" content="wgr45097&#39;s blog">
-<meta property="og:description" content="三类常见的位运算or, and, xor分别对应三种位运算卷积,即or卷积, and卷积, xor卷积.如果将二进制数看做集合,上面三种位运算分别对应集合的并,交,对称差.另外,我们还关心集合的不相交并.由此我们引入下面四种位运算卷积的快速算法.对于复数上的普通的卷积$c_n=\sum_{i+j=n}a_{i}b_{j}$,快速算法是先DFT,之后点乘,再IDFT.事实上,下面四种位运算的前三种都">
+<meta property="og:description" content="三类常见的位运算or, and, xor分别对应三种位运算卷积,即or卷积, and卷积, xor卷积. 如果将二进制数看做集合,上面三种位运算分别对应集合的并,交,对称差.另外,我们还关心集合的不相交并. 由此我们引入下面四种位运算卷积的快速算法. 对于复数上的普通的卷积cn=∑i+j=naibjc_n=\sum_{i+j=n}a_{i}b_{j}cn​=∑i+j=n​ai​bj​,快速算法是先">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-06-20T05:59:36.054Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集合幂级数">
-<meta name="twitter:description" content="三类常见的位运算or, and, xor分别对应三种位运算卷积,即or卷积, and卷积, xor卷积.如果将二进制数看做集合,上面三种位运算分别对应集合的并,交,对称差.另外,我们还关心集合的不相交并.由此我们引入下面四种位运算卷积的快速算法.对于复数上的普通的卷积$c_n=\sum_{i+j=n}a_{i}b_{j}$,快速算法是先DFT,之后点乘,再IDFT.事实上,下面四种位运算的前三种都">
+<meta name="twitter:description" content="三类常见的位运算or, and, xor分别对应三种位运算卷积,即or卷积, and卷积, xor卷积. 如果将二进制数看做集合,上面三种位运算分别对应集合的并,交,对称差.另外,我们还关心集合的不相交并. 由此我们引入下面四种位运算卷积的快速算法. 对于复数上的普通的卷积cn=∑i+j=naibjc_n=\sum_{i+j=n}a_{i}b_{j}cn​=∑i+j=n​ai​bj​,快速算法是先">
 
 
 
@@ -454,8 +454,16 @@
       
 
       
-        <p>三类常见的位运算or, and, xor分别对应三种位运算卷积,即or卷积, and卷积, xor卷积.<br>如果将二进制数看做集合,上面三种位运算分别对应集合的并,交,对称差.另外,我们还关心集合的不相交并.<br>由此我们引入下面四种位运算卷积的快速算法.<br>对于复数上的普通的卷积$c_n=\sum_{i+j=n}a_{i}b_{j}$,快速算法是先DFT,之后点乘,再IDFT.<br>事实上,下面四种位运算的前三种都有与DFT作用类似的变换与之对应.而第四种运算,即子集卷积,可以转化为前三种中的任意一种.</p>
-<h3 id="or卷积"><a href="#or卷积" class="headerlink" title="or卷积"></a>or卷积</h3><h3 id="and卷积"><a href="#and卷积" class="headerlink" title="and卷积"></a>and卷积</h3><h3 id="xor卷积"><a href="#xor卷积" class="headerlink" title="xor卷积"></a>xor卷积</h3><h3 id="子集卷积-不相交并"><a href="#子集卷积-不相交并" class="headerlink" title="子集卷积(不相交并)"></a>子集卷积(不相交并)</h3>
+        <p>三类常见的位运算or, and, xor分别对应三种位运算卷积,即or卷积, and卷积, xor卷积.<br>
+如果将二进制数看做集合,上面三种位运算分别对应集合的并,交,对称差.另外,我们还关心集合的不相交并.<br>
+由此我们引入下面四种位运算卷积的快速算法.<br>
+对于复数上的普通的卷积<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>c</mi><mi>n</mi></msub><mo>=</mo><msub><mo>∑</mo><mrow><mi>i</mi><mo>+</mo><mi>j</mi><mo>=</mo><mi>n</mi></mrow></msub><msub><mi>a</mi><mi>i</mi></msub><msub><mi>b</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">c_n=\sum_{i+j=n}a_{i}b_{j}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.185818em;vertical-align:-0.43581800000000004em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.16195399999999993em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">+</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mrel mtight">=</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.43581800000000004em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>,快速算法是先DFT,之后点乘,再IDFT.<br>
+事实上,下面四种位运算的前三种都有与DFT作用类似的变换与之对应.而第四种运算,即子集卷积,可以转化为前三种中的任意一种.</p>
+<h3 id="or卷积"><a class="markdownIt-Anchor" href="#or卷积"></a> or卷积</h3>
+<h3 id="and卷积"><a class="markdownIt-Anchor" href="#and卷积"></a> and卷积</h3>
+<h3 id="xor卷积"><a class="markdownIt-Anchor" href="#xor卷积"></a> xor卷积</h3>
+<h3 id="子集卷积不相交并"><a class="markdownIt-Anchor" href="#子集卷积不相交并"></a> 子集卷积(不相交并)</h3>
+
       
     </div>
 
@@ -566,7 +574,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -605,7 +613,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -645,7 +657,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#or卷积"><span class="nav-number">1.</span> <span class="nav-text">or卷积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#and卷积"><span class="nav-number">2.</span> <span class="nav-text">and卷积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xor卷积"><span class="nav-number">3.</span> <span class="nav-text">xor卷积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子集卷积-不相交并"><span class="nav-number">4.</span> <span class="nav-text">子集卷积(不相交并)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#or卷积"><span class="nav-number">1.</span> <span class="nav-text"> or卷积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#and卷积"><span class="nav-number">2.</span> <span class="nav-text"> and卷积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xor卷积"><span class="nav-number">3.</span> <span class="nav-text"> xor卷积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子集卷积不相交并"><span class="nav-number">4.</span> <span class="nav-text"> 子集卷积(不相交并)</span></a></li></ol></div>
             
 
           </div>
@@ -1139,42 +1151,8 @@
 
   
     
-      <script type="text/x-mathjax-config">
-  
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
 
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
   

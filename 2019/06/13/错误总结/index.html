@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="错误 1ll&amp;lt;&amp;lt;60而不是1&amp;lt;&amp;lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:1234567int main()&amp;#123;    int A[0];    int N = 10;    for (int i = 0; i &amp;lt">
+  <meta name="description" content="错误  1ll&amp;lt;&amp;lt;60而不是1&amp;lt;&amp;lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:  1234567int main()&amp;#123;    int A[0];    int N = 10;    for (int i = 0; i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="错误总结">
 <meta property="og:url" content="http://yoursite.com/2019/06/13/错误总结/index.html">
 <meta property="og:site_name" content="wgr45097&#39;s blog">
-<meta property="og:description" content="错误 1ll&amp;lt;&amp;lt;60而不是1&amp;lt;&amp;lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:1234567int main()&amp;#123;    int A[0];    int N = 10;    for (int i = 0; i &amp;lt">
+<meta property="og:description" content="错误  1ll&amp;lt;&amp;lt;60而不是1&amp;lt;&amp;lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:  1234567int main()&amp;#123;    int A[0];    int N = 10;    for (int i = 0; i">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-06-27T14:44:37.144Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="错误总结">
-<meta name="twitter:description" content="错误 1ll&amp;lt;&amp;lt;60而不是1&amp;lt;&amp;lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:1234567int main()&amp;#123;    int A[0];    int N = 10;    for (int i = 0; i &amp;lt">
+<meta name="twitter:description" content="错误  1ll&amp;lt;&amp;lt;60而不是1&amp;lt;&amp;lt;60(字面量也会int溢出) 数组越界在开O2优化时会导致一些奇怪的现象,如printf没有输出. 做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变. 以下的代码可能可以通过编译:  1234567int main()&amp;#123;    int A[0];    int N = 10;    for (int i = 0; i">
 
 
 
@@ -447,15 +447,16 @@
       
 
       
-        <h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><ol>
+        <h2 id="错误"><a class="markdownIt-Anchor" href="#错误"></a> 错误</h2>
+<ol>
 <li><code>1ll&lt;&lt;60</code>而不是<code>1&lt;&lt;60</code>(字面量也会int溢出)</li>
 <li>数组越界在开O2优化时会导致一些奇怪的现象,如<code>printf</code>没有输出.</li>
 <li>做递归/分治的时候用到的全局变量/数组可能在递归调用中被改变.</li>
-<li>以下的代码可能可以通过编译:<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> A[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">int</span> N = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">        A[i] = i * i + <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>以下的代码可能可以通过编译:</li>
 </ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> A[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">int</span> N = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">        A[i] = i * i + <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>然而在访问<code>A[1],A[2],...</code>时会<code>Segmentation fault</code>.</p>
-<ol>
+<ol start="5">
 <li>注意MLE.</li>
 <li>强制在线时,每次回答完询问要更新<code>lastans</code>.</li>
 <li>两个<code>long long</code>相乘,对一个<code>int</code>取模时,要先各自取模,相乘后再取模.</li>
@@ -463,8 +464,9 @@
 <li>多测要清空.</li>
 <li>动态开点的数据结构要算好总点数,必要时进行垃圾回收.</li>
 </ol>
-<h2 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h2><ol>
-<li>写每个程序片段时一定要明确它的作用和适用范围(例如”合并两个凸包,需要保证传入的每个凸包内两点不重合,三点不共线”),写完代码一定要在头脑中梳理一遍程序的流程.</li>
+<h2 id="心得"><a class="markdownIt-Anchor" href="#心得"></a> 心得</h2>
+<ol>
+<li>写每个程序片段时一定要明确它的作用和适用范围(例如&quot;合并两个凸包,需要保证传入的每个凸包内两点不重合,三点不共线&quot;),写完代码一定要在头脑中梳理一遍程序的流程.</li>
 <li>用<code>namespace</code>使得针对不同Subtask的程序片段间互不影响.</li>
 <li>打表找规律.</li>
 <li>对一个迭代的过程,一定要想清楚它的invariant是什么.</li>
@@ -475,7 +477,8 @@
 <li>Think canonically.</li>
 <li>提交答案题一定要看完所有的数据点,观察特殊性质,可以手玩小规模数据.</li>
 </ol>
-<h2 id="卡常经验"><a href="#卡常经验" class="headerlink" title="卡常经验"></a>卡常经验</h2><ol>
+<h2 id="卡常经验"><a class="markdownIt-Anchor" href="#卡常经验"></a> 卡常经验</h2>
+<ol>
 <li>乘法较慢,除法非常慢.位运算很快.</li>
 <li><code>bitset</code>很快,有时候需要手动封装一个<code>bitset</code>,以避免性能退化.</li>
 <li>高频率地执行关于某个变量的简单表达式时,<code>register</code>可能有很好的效果.</li>
@@ -592,7 +595,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -631,7 +634,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -671,7 +678,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#错误"><span class="nav-number">1.</span> <span class="nav-text">错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#心得"><span class="nav-number">2.</span> <span class="nav-text">心得</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卡常经验"><span class="nav-number">3.</span> <span class="nav-text">卡常经验</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#错误"><span class="nav-number">1.</span> <span class="nav-text"> 错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#心得"><span class="nav-number">2.</span> <span class="nav-text"> 心得</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卡常经验"><span class="nav-number">3.</span> <span class="nav-text"> 卡常经验</span></a></li></ol></div>
             
 
           </div>
@@ -1165,42 +1172,8 @@
 
   
     
-      <script type="text/x-mathjax-config">
-  
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
 
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
   

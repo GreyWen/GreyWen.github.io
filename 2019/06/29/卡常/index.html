@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="寻址优化普通写法12for(int i = 0; i &amp;lt; n; ++i)	dp[a][b][c][d][e]....; 优秀写法123int *f = dp[a][b][c][d][e];for (int i = 0; i &amp;lt; n; ++i)	*f....; 取模优化减少不必要的运算123456789inline void add_fc(int *f, int val) &amp;#123;">
+  <meta name="description" content="###寻址优化 普通写法 12for(int i = 0; i &amp;lt; n; ++i)	dp[a][b][c][d][e]....; 优秀写法 123int *f = dp[a][b][c][d][e];for (int i = 0; i &amp;lt; n; ++i)	*f....; ###取模优化 ###减少不必要的运算 123456789inline void add_fc(int *f, in">
 <meta property="og:type" content="article">
 <meta property="og:title" content="卡常">
 <meta property="og:url" content="http://yoursite.com/2019/06/29/卡常/index.html">
 <meta property="og:site_name" content="wgr45097&#39;s blog">
-<meta property="og:description" content="寻址优化普通写法12for(int i = 0; i &amp;lt; n; ++i)	dp[a][b][c][d][e]....; 优秀写法123int *f = dp[a][b][c][d][e];for (int i = 0; i &amp;lt; n; ++i)	*f....; 取模优化减少不必要的运算123456789inline void add_fc(int *f, int val) &amp;#123;">
+<meta property="og:description" content="###寻址优化 普通写法 12for(int i = 0; i &amp;lt; n; ++i)	dp[a][b][c][d][e]....; 优秀写法 123int *f = dp[a][b][c][d][e];for (int i = 0; i &amp;lt; n; ++i)	*f....; ###取模优化 ###减少不必要的运算 123456789inline void add_fc(int *f, in">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-06-30T10:26:28.437Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="卡常">
-<meta name="twitter:description" content="寻址优化普通写法12for(int i = 0; i &amp;lt; n; ++i)	dp[a][b][c][d][e]....; 优秀写法123int *f = dp[a][b][c][d][e];for (int i = 0; i &amp;lt; n; ++i)	*f....; 取模优化减少不必要的运算123456789inline void add_fc(int *f, int val) &amp;#123;">
+<meta name="twitter:description" content="###寻址优化 普通写法 12for(int i = 0; i &amp;lt; n; ++i)	dp[a][b][c][d][e]....; 优秀写法 123int *f = dp[a][b][c][d][e];for (int i = 0; i &amp;lt; n; ++i)	*f....; ###取模优化 ###减少不必要的运算 123456789inline void add_fc(int *f, in">
 
 
 
@@ -447,9 +447,14 @@
       
 
       
-        <h3 id="寻址优化"><a href="#寻址优化" class="headerlink" title="寻址优化"></a>寻址优化</h3><p>普通写法<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">	dp[a][b][c][d][e]....;</span><br></pre></td></tr></table></figure></p>
-<p>优秀写法<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *f = dp[a][b][c][d][e];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">	*f....;</span><br></pre></td></tr></table></figure></p>
-<h3 id="取模优化"><a href="#取模优化" class="headerlink" title="取模优化"></a>取模优化</h3><h3 id="减少不必要的运算"><a href="#减少不必要的运算" class="headerlink" title="减少不必要的运算"></a>减少不必要的运算</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add_fc</span><span class="params">(<span class="keyword">int</span> *f, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">	rg <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (rg <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">		<span class="comment">//f[i] = 1ll*f[i]*omega[1ll*i*val%m]%mod; //1300ms</span></span><br><span class="line">		f[i] = <span class="number">1l</span>l*f[i]*omega[t]%mod;</span><br><span class="line">		t += val;</span><br><span class="line">		<span class="keyword">if</span> (t &gt;= m) t -= m;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>###寻址优化<br>
+普通写法</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">	dp[a][b][c][d][e]....;</span><br></pre></td></tr></table></figure>
+<p>优秀写法</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *f = dp[a][b][c][d][e];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">	*f....;</span><br></pre></td></tr></table></figure>
+<p>###取模优化</p>
+<p>###减少不必要的运算</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add_fc</span><span class="params">(<span class="keyword">int</span> *f, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">	rg <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (rg <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">		<span class="comment">//f[i] = 1ll*f[i]*omega[1ll*i*val%m]%mod; //1300ms</span></span><br><span class="line">		f[i] = <span class="number">1l</span>l*f[i]*omega[t]%mod;</span><br><span class="line">		t += val;</span><br><span class="line">		<span class="keyword">if</span> (t &gt;= m) t -= m;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -536,17 +541,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -561,7 +557,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -600,7 +596,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -629,23 +629,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#寻址优化"><span class="nav-number">1.</span> <span class="nav-text">寻址优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取模优化"><span class="nav-number">2.</span> <span class="nav-text">取模优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减少不必要的运算"><span class="nav-number">3.</span> <span class="nav-text">减少不必要的运算</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
@@ -1134,42 +1117,8 @@
 
   
     
-      <script type="text/x-mathjax-config">
-  
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
 
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
   

@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="String先考虑给定$S,T$怎样求$S$的最小代价.这等价于将$S$划分为若干连续的段,每一段都是$T$的子串,求最小划分段数. 这个问题可以贪心:将$S$的尽量长的前缀划分为一段.贪心的正确性可以用决策包容性证明. 回到原来的问题.注意到一个串是$T$的子串和它在$T$的SAM上是等价的.考虑逐个确定$S$的每一位的过程,每加入一个字符,就在$T$的SAM上做相应的转移,若无法转移则回到根节">
+  <meta name="description" content="String 先考虑给定S,TS,TS,T怎样求SSS的最小代价.这等价于将SSS划分为若干连续的段,每一段都是TTT的子串,求最小划分段数. 这个问题可以贪心:将SSS的尽量长的前缀划分为一段.贪心的正确性可以用决策包容性证明. 回到原来的问题.注意到一个串是TTT的子串和它在TTT的SAM上是等价的.考虑逐个确定SSS的每一位的过程,每加入一个字符,就在TTT的SAM上做相应的转移,若无法转">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2019.06.13模拟赛">
 <meta property="og:url" content="http://yoursite.com/2019/06/15/2019-06-13模拟赛/index.html">
 <meta property="og:site_name" content="wgr45097&#39;s blog">
-<meta property="og:description" content="String先考虑给定$S,T$怎样求$S$的最小代价.这等价于将$S$划分为若干连续的段,每一段都是$T$的子串,求最小划分段数. 这个问题可以贪心:将$S$的尽量长的前缀划分为一段.贪心的正确性可以用决策包容性证明. 回到原来的问题.注意到一个串是$T$的子串和它在$T$的SAM上是等价的.考虑逐个确定$S$的每一位的过程,每加入一个字符,就在$T$的SAM上做相应的转移,若无法转移则回到根节">
+<meta property="og:description" content="String 先考虑给定S,TS,TS,T怎样求SSS的最小代价.这等价于将SSS划分为若干连续的段,每一段都是TTT的子串,求最小划分段数. 这个问题可以贪心:将SSS的尽量长的前缀划分为一段.贪心的正确性可以用决策包容性证明. 回到原来的问题.注意到一个串是TTT的子串和它在TTT的SAM上是等价的.考虑逐个确定SSS的每一位的过程,每加入一个字符,就在TTT的SAM上做相应的转移,若无法转">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-06-20T05:42:33.081Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019.06.13模拟赛">
-<meta name="twitter:description" content="String先考虑给定$S,T$怎样求$S$的最小代价.这等价于将$S$划分为若干连续的段,每一段都是$T$的子串,求最小划分段数. 这个问题可以贪心:将$S$的尽量长的前缀划分为一段.贪心的正确性可以用决策包容性证明. 回到原来的问题.注意到一个串是$T$的子串和它在$T$的SAM上是等价的.考虑逐个确定$S$的每一位的过程,每加入一个字符,就在$T$的SAM上做相应的转移,若无法转移则回到根节">
+<meta name="twitter:description" content="String 先考虑给定S,TS,TS,T怎样求SSS的最小代价.这等价于将SSS划分为若干连续的段,每一段都是TTT的子串,求最小划分段数. 这个问题可以贪心:将SSS的尽量长的前缀划分为一段.贪心的正确性可以用决策包容性证明. 回到原来的问题.注意到一个串是TTT的子串和它在TTT的SAM上是等价的.考虑逐个确定SSS的每一位的过程,每加入一个字符,就在TTT的SAM上做相应的转移,若无法转">
 
 
 
@@ -454,9 +454,10 @@
       
 
       
-        <h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>先考虑给定$S,T$怎样求$S$的最小代价.这等价于将$S$划分为若干连续的段,每一段都是$T$的子串,求最小划分段数.</p>
-<p>这个问题可以贪心:将$S$的尽量长的前缀划分为一段.贪心的正确性可以用决策包容性证明.</p>
-<p>回到原来的问题.注意到一个串是$T$的子串和它在$T$的SAM上是等价的.考虑逐个确定$S$的每一位的过程,每加入一个字符,就在$T$的SAM上做相应的转移,若无法转移则回到根节点并转移,且将代价$+1$.于是,我们只需预处理出从$T$上对应字符$a,b,c,d$的4个点中的某个点出发,以$a,b,c,d$中的某种转移失败结束,所需要的最小长度.这是一个$4\times 4$的矩阵.得到矩阵之后,只需要矩阵快速幂即可.</p>
+        <h3 id="string"><a class="markdownIt-Anchor" href="#string"></a> String</h3>
+<p>先考虑给定<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo separator="true">,</mo><mi>T</mi></mrow><annotation encoding="application/x-tex">S,T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span>怎样求<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span>的最小代价.这等价于将<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span>划分为若干连续的段,每一段都是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span>的子串,求最小划分段数.</p>
+<p>这个问题可以贪心:将<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span>的尽量长的前缀划分为一段.贪心的正确性可以用决策包容性证明.</p>
+<p>回到原来的问题.注意到一个串是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span>的子串和它在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span>的SAM上是等价的.考虑逐个确定<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span>的每一位的过程,每加入一个字符,就在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span>的SAM上做相应的转移,若无法转移则回到根节点并转移,且将代价<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span></span></span></span>.于是,我们只需预处理出从<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span>上对应字符<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo separator="true">,</mo><mi>c</mi><mo separator="true">,</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">a,b,c,d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">d</span></span></span></span>的4个点中的某个点出发,以<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo separator="true">,</mo><mi>c</mi><mo separator="true">,</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">a,b,c,d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">d</span></span></span></span>中的某种转移失败结束,所需要的最小长度.这是一个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mo>×</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">4\times 4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span>的矩阵.得到矩阵之后,只需要矩阵快速幂即可.</p>
 
       
     </div>
@@ -568,7 +569,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -607,7 +608,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -647,7 +652,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#String"><span class="nav-number">1.</span> <span class="nav-text">String</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#string"><span class="nav-number">1.</span> <span class="nav-text"> String</span></a></li></ol></div>
             
 
           </div>
@@ -1141,42 +1146,8 @@
 
   
     
-      <script type="text/x-mathjax-config">
-  
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
 
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
   

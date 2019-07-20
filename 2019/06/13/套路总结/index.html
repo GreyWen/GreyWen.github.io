@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="不全是套路,也有一些思想和方法. 序列分割$\rightarrow$$O(N^{2})$DP+优化,即考虑上一个分割出的区间的结束位置. “DP套贪心”内层的决策具有贪心性质,或是推导出最优的方案一定具有怎样的性质(如一定优先选较小的等),再以此DP. 二进制分组.要枚举所有的$(x, y),x\neq y$时,如果不容易去掉$x\neq y$ 的限制,可以考虑枚举$x,y$的哪一个二进制位不同.">
+  <meta name="description" content="不全是套路,也有一些思想和方法.  序列分割 →\rightarrow→O(N2)O(N^{2})O(N2)DP+优化,即考虑上一个分割出的区间的结束位置.  “DP套贪心” 内层的决策具有贪心性质,或是推导出最优的方案一定具有怎样的性质(如一定优先选较小的等),再以此DP.  二进制分组. 要枚举所有的(x,y),x≠y(x, y),x\neq y(x,y),x​=y时,如果不容易去掉x≠yx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="套路总结">
 <meta property="og:url" content="http://yoursite.com/2019/06/13/套路总结/index.html">
 <meta property="og:site_name" content="wgr45097&#39;s blog">
-<meta property="og:description" content="不全是套路,也有一些思想和方法. 序列分割$\rightarrow$$O(N^{2})$DP+优化,即考虑上一个分割出的区间的结束位置. “DP套贪心”内层的决策具有贪心性质,或是推导出最优的方案一定具有怎样的性质(如一定优先选较小的等),再以此DP. 二进制分组.要枚举所有的$(x, y),x\neq y$时,如果不容易去掉$x\neq y$ 的限制,可以考虑枚举$x,y$的哪一个二进制位不同.">
+<meta property="og:description" content="不全是套路,也有一些思想和方法.  序列分割 →\rightarrow→O(N2)O(N^{2})O(N2)DP+优化,即考虑上一个分割出的区间的结束位置.  “DP套贪心” 内层的决策具有贪心性质,或是推导出最优的方案一定具有怎样的性质(如一定优先选较小的等),再以此DP.  二进制分组. 要枚举所有的(x,y),x≠y(x, y),x\neq y(x,y),x​=y时,如果不容易去掉x≠yx">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-06-27T14:42:37.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="套路总结">
-<meta name="twitter:description" content="不全是套路,也有一些思想和方法. 序列分割$\rightarrow$$O(N^{2})$DP+优化,即考虑上一个分割出的区间的结束位置. “DP套贪心”内层的决策具有贪心性质,或是推导出最优的方案一定具有怎样的性质(如一定优先选较小的等),再以此DP. 二进制分组.要枚举所有的$(x, y),x\neq y$时,如果不容易去掉$x\neq y$ 的限制,可以考虑枚举$x,y$的哪一个二进制位不同.">
+<meta name="twitter:description" content="不全是套路,也有一些思想和方法.  序列分割 →\rightarrow→O(N2)O(N^{2})O(N2)DP+优化,即考虑上一个分割出的区间的结束位置.  “DP套贪心” 内层的决策具有贪心性质,或是推导出最优的方案一定具有怎样的性质(如一定优先选较小的等),再以此DP.  二进制分组. 要枚举所有的(x,y),x≠y(x, y),x\neq y(x,y),x​=y时,如果不容易去掉x≠yx">
 
 
 
@@ -448,17 +448,30 @@
 
       
         <p>不全是套路,也有一些思想和方法.</p>
-<h3 id="序列分割"><a href="#序列分割" class="headerlink" title="序列分割"></a>序列分割</h3><p>$\rightarrow$$O(N^{2})$DP+优化,即考虑上一个分割出的区间的结束位置.</p>
-<h3 id="“DP套贪心”"><a href="#“DP套贪心”" class="headerlink" title="“DP套贪心”"></a>“DP套贪心”</h3><p>内层的决策具有贪心性质,或是推导出最优的方案一定具有怎样的性质(如一定优先选较小的等),再以此DP.</p>
-<h3 id="二进制分组"><a href="#二进制分组" class="headerlink" title="二进制分组."></a>二进制分组.</h3><p>要枚举所有的$(x, y),x\neq y$时,如果不容易去掉$x\neq y$ 的限制,可以考虑枚举$x,y$的哪一个二进制位不同.注意这样同一个pair可能被枚举多次.</p>
-<h3 id="树上路径第k小"><a href="#树上路径第k小" class="headerlink" title="树上路径第k小"></a>树上路径第k小</h3><p>考虑主席树做序列上区间第k小的过程,只需要类似地维护每个点到根的路径对应的权值线段树,利用树上差分,由四个到根路径的权值线段树可以做差得到一个两点间路径的权值线段树.每次四个点一起跳,二分找第k小即可.</p>
-<h3 id="sum-与-prod-的转化"><a href="#sum-与-prod-的转化" class="headerlink" title="$\sum$与$\prod$的转化"></a>$\sum$与$\prod$的转化</h3><p>注意到</p>
-<script type="math/tex; mode=display">
-\ln(\prod a_{i})=\sum(\ln a_{i})</script><p>.<br>因此可以取指数和对数来在和与积直接转化.<br>如变元矩阵树定理适用于边权积,分数规划适用于边权和.</p>
-<h3 id="基于xor的随机化方法"><a href="#基于xor的随机化方法" class="headerlink" title="基于xor的随机化方法"></a>基于xor的随机化方法</h3><p>利用xor同一个值两次相当于没有做的性质.</p>
-<h3 id="绝对值转-max"><a href="#绝对值转-max" class="headerlink" title="绝对值转$\max$"></a>绝对值转$\max$</h3><p>$|a|=\max\{a,-a\}$</p>
-<h3 id="下标和值的转化"><a href="#下标和值的转化" class="headerlink" title="下标和值的转化"></a>下标和值的转化</h3><p>交换dp方程中的下标和值,有时可以优化状态数或者转移,例如使决策具有单调性.</p>
-<h3 id="答案长什么样"><a href="#答案长什么样" class="headerlink" title="答案长什么样?"></a>答案长什么样?</h3><h3 id="哪一类特殊的解已经可以覆盖所有情况"><a href="#哪一类特殊的解已经可以覆盖所有情况" class="headerlink" title="哪一类特殊的解已经可以覆盖所有情况?"></a>哪一类特殊的解已经可以覆盖所有情况?</h3>
+<h3 id="序列分割"><a class="markdownIt-Anchor" href="#序列分割"></a> 序列分割</h3>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>N</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N^{2})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>DP+优化,即考虑上一个分割出的区间的结束位置.</p>
+<h3 id="dp套贪心"><a class="markdownIt-Anchor" href="#dp套贪心"></a> “DP套贪心”</h3>
+<p>内层的决策具有贪心性质,或是推导出最优的方案一定具有怎样的性质(如一定优先选较小的等),再以此DP.</p>
+<h3 id="二进制分组"><a class="markdownIt-Anchor" href="#二进制分组"></a> 二进制分组.</h3>
+<p>要枚举所有的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mi>x</mi><mi mathvariant="normal">≠</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">(x, y),x\neq y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>时,如果不容易去掉<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mi mathvariant="normal">≠</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">x\neq y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 的限制,可以考虑枚举<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x,y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>的哪一个二进制位不同.注意这样同一个pair可能被枚举多次.</p>
+<h3 id="树上路径第k小"><a class="markdownIt-Anchor" href="#树上路径第k小"></a> 树上路径第k小</h3>
+<p>考虑主席树做序列上区间第k小的过程,只需要类似地维护每个点到根的路径对应的权值线段树,利用树上差分,由四个到根路径的权值线段树可以做差得到一个两点间路径的权值线段树.每次四个点一起跳,二分找第k小即可.</p>
+<h3 id="sum与prod的转化"><a class="markdownIt-Anchor" href="#sum与prod的转化"></a> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∑</mo></mrow><annotation encoding="application/x-tex">\sum</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.00001em;vertical-align:-0.25001em;"></span><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span></span></span></span>与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∏</mo></mrow><annotation encoding="application/x-tex">\prod</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.00001em;vertical-align:-0.25001em;"></span><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∏</span></span></span></span>的转化</h3>
+<p>注意到</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mo>∏</mo><msub><mi>a</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>=</mo><mo>∑</mo><mo stretchy="false">(</mo><mi>ln</mi><mo>⁡</mo><msub><mi>a</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ln(\prod a_{i})=\sum(\ln a_{i})
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.6000100000000002em;vertical-align:-0.55001em;"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mop op-symbol large-op" style="position:relative;top:-0.000004999999999977245em;">∏</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.6000100000000002em;vertical-align:-0.55001em;"></span><span class="mop op-symbol large-op" style="position:relative;top:-0.000004999999999977245em;">∑</span><span class="mopen">(</span><span class="mop">ln</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
+<p>.<br>
+因此可以取指数和对数来在和与积直接转化.<br>
+如变元矩阵树定理适用于边权积,分数规划适用于边权和.</p>
+<h3 id="基于xor的随机化方法"><a class="markdownIt-Anchor" href="#基于xor的随机化方法"></a> 基于xor的随机化方法</h3>
+<p>利用xor同一个值两次相当于没有做的性质.</p>
+<h3 id="绝对值转max"><a class="markdownIt-Anchor" href="#绝对值转max"></a> 绝对值转<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>max</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\max</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mop">max</span></span></span></span></h3>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>a</mi><mi mathvariant="normal">∣</mi><mo>=</mo><mi>max</mi><mo>⁡</mo><mo stretchy="false">{</mo><mi>a</mi><mo separator="true">,</mo><mo>−</mo><mi>a</mi><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">|a|=\max\{a,-a\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathdefault">a</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">{</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">−</span><span class="mord mathdefault">a</span><span class="mclose">}</span></span></span></span></p>
+<h3 id="下标和值的转化"><a class="markdownIt-Anchor" href="#下标和值的转化"></a> 下标和值的转化</h3>
+<p>交换dp方程中的下标和值,有时可以优化状态数或者转移,例如使决策具有单调性.</p>
+<h3 id="答案长什么样"><a class="markdownIt-Anchor" href="#答案长什么样"></a> 答案长什么样?</h3>
+<h3 id="哪一类特殊的解已经可以覆盖所有情况"><a class="markdownIt-Anchor" href="#哪一类特殊的解已经可以覆盖所有情况"></a> 哪一类特殊的解已经可以覆盖所有情况?</h3>
+
       
     </div>
 
@@ -569,7 +582,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -608,7 +621,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -648,7 +665,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#序列分割"><span class="nav-number">1.</span> <span class="nav-text">序列分割</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“DP套贪心”"><span class="nav-number">2.</span> <span class="nav-text">“DP套贪心”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制分组"><span class="nav-number">3.</span> <span class="nav-text">二进制分组.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树上路径第k小"><span class="nav-number">4.</span> <span class="nav-text">树上路径第k小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sum-与-prod-的转化"><span class="nav-number">5.</span> <span class="nav-text">$\sum$与$\prod$的转化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于xor的随机化方法"><span class="nav-number">6.</span> <span class="nav-text">基于xor的随机化方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对值转-max"><span class="nav-number">7.</span> <span class="nav-text">绝对值转$\max$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下标和值的转化"><span class="nav-number">8.</span> <span class="nav-text">下标和值的转化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#答案长什么样"><span class="nav-number">9.</span> <span class="nav-text">答案长什么样?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哪一类特殊的解已经可以覆盖所有情况"><span class="nav-number">10.</span> <span class="nav-text">哪一类特殊的解已经可以覆盖所有情况?</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#序列分割"><span class="nav-number">1.</span> <span class="nav-text"> 序列分割</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dp套贪心"><span class="nav-number">2.</span> <span class="nav-text"> “DP套贪心”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制分组"><span class="nav-number">3.</span> <span class="nav-text"> 二进制分组.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树上路径第k小"><span class="nav-number">4.</span> <span class="nav-text"> 树上路径第k小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sum与prod的转化"><span class="nav-number">5.</span> <span class="nav-text"> ∑\sum∑与∏\prod∏的转化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于xor的随机化方法"><span class="nav-number">6.</span> <span class="nav-text"> 基于xor的随机化方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对值转max"><span class="nav-number">7.</span> <span class="nav-text"> 绝对值转max⁡\maxmax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下标和值的转化"><span class="nav-number">8.</span> <span class="nav-text"> 下标和值的转化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#答案长什么样"><span class="nav-number">9.</span> <span class="nav-text"> 答案长什么样?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哪一类特殊的解已经可以覆盖所有情况"><span class="nav-number">10.</span> <span class="nav-text"> 哪一类特殊的解已经可以覆盖所有情况?</span></a></li></ol></div>
             
 
           </div>
@@ -1142,42 +1159,8 @@
 
   
     
-      <script type="text/x-mathjax-config">
-  
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
 
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
   

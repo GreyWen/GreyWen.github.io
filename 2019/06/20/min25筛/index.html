@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="下面默认$p$是一个质数. min25筛如果一个数论函数$f$满足:  $f$是积性函数 $f(p)$是关于$p$的简单多项式 $f(p^{k})$可以快速地求出则min25筛可以以低于线性的时间算出$f$的前缀和.如果能够$O(1)$求$f(p^{k})$,则min25筛的时间复杂度可以认为是$O(\frac{n^{0.75}}{\log n})$.  第一步:求前$\lfloor\frac{n">
+  <meta name="description" content="下面默认ppp是一个质数.  min25筛 如果一个数论函数fff满足:  fff是积性函数 f(p)f(p)f(p)是关于ppp的简单多项式 f(pk)f(p^{k})f(pk)可以快速地求出 则min25筛可以以低于线性的时间算出fff的前缀和. 如果能够O(1)O(1)O(1)求f(pk)f(p^{k})f(pk),则min25筛的时间复杂度可以认为是O(n0.75log⁡n)O(\frac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="min25筛">
 <meta property="og:url" content="http://yoursite.com/2019/06/20/min25筛/index.html">
 <meta property="og:site_name" content="wgr45097&#39;s blog">
-<meta property="og:description" content="下面默认$p$是一个质数. min25筛如果一个数论函数$f$满足:  $f$是积性函数 $f(p)$是关于$p$的简单多项式 $f(p^{k})$可以快速地求出则min25筛可以以低于线性的时间算出$f$的前缀和.如果能够$O(1)$求$f(p^{k})$,则min25筛的时间复杂度可以认为是$O(\frac{n^{0.75}}{\log n})$.  第一步:求前$\lfloor\frac{n">
+<meta property="og:description" content="下面默认ppp是一个质数.  min25筛 如果一个数论函数fff满足:  fff是积性函数 f(p)f(p)f(p)是关于ppp的简单多项式 f(pk)f(p^{k})f(pk)可以快速地求出 则min25筛可以以低于线性的时间算出fff的前缀和. 如果能够O(1)O(1)O(1)求f(pk)f(p^{k})f(pk),则min25筛的时间复杂度可以认为是O(n0.75log⁡n)O(\frac">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-22T14:24:03.440Z">
+<meta property="og:updated_time" content="2019-07-19T11:49:40.770Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="min25筛">
-<meta name="twitter:description" content="下面默认$p$是一个质数. min25筛如果一个数论函数$f$满足:  $f$是积性函数 $f(p)$是关于$p$的简单多项式 $f(p^{k})$可以快速地求出则min25筛可以以低于线性的时间算出$f$的前缀和.如果能够$O(1)$求$f(p^{k})$,则min25筛的时间复杂度可以认为是$O(\frac{n^{0.75}}{\log n})$.  第一步:求前$\lfloor\frac{n">
+<meta name="twitter:description" content="下面默认ppp是一个质数.  min25筛 如果一个数论函数fff满足:  fff是积性函数 f(p)f(p)f(p)是关于ppp的简单多项式 f(pk)f(p^{k})f(pk)可以快速地求出 则min25筛可以以低于线性的时间算出fff的前缀和. 如果能够O(1)O(1)O(1)求f(pk)f(p^{k})f(pk),则min25筛的时间复杂度可以认为是O(n0.75log⁡n)O(\frac">
 
 
 
@@ -395,7 +395,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-06-22 22:24:03" itemprop="dateModified" datetime="2019-06-22T22:24:03+08:00">2019-06-22</time>
+                <time title="Modified: 2019-07-19 19:49:40" itemprop="dateModified" datetime="2019-07-19T19:49:40+08:00">2019-07-19</time>
               
             
           </span>
@@ -461,17 +461,30 @@
       
 
       
-        <p>下面默认$p$是一个质数.</p>
-<h3 id="min25筛"><a href="#min25筛" class="headerlink" title="min25筛"></a>min25筛</h3><p>如果一个数论函数$f$满足:</p>
+        <p>下面默认<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span></span></span></span>是一个质数.</p>
+<h3 id="min25筛"><a class="markdownIt-Anchor" href="#min25筛"></a> min25筛</h3>
+<p>如果一个数论函数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span></span></span></span>满足:</p>
 <ol>
-<li>$f$是积性函数</li>
-<li>$f(p)$是关于$p$的简单多项式</li>
-<li>$f(p^{k})$可以快速地求出<br>则min25筛可以以低于线性的时间算出$f$的前缀和.<br>如果能够$O(1)$求$f(p^{k})$,则min25筛的时间复杂度可以认为是$O(\frac{n^{0.75}}{\log n})$.</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span></span></span></span>是积性函数</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(p)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">p</span><span class="mclose">)</span></span></span></span>是关于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span></span></span></span>的简单多项式</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><msup><mi>p</mi><mi>k</mi></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(p^{k})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.099108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>可以快速地求出<br>
+则min25筛可以以低于线性的时间算出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span></span></span></span>的前缀和.<br>
+如果能够<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>求<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><msup><mi>p</mi><mi>k</mi></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(p^{k})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.099108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>,则min25筛的时间复杂度可以认为是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mfrac><msup><mi>n</mi><mn>0.75</mn></msup><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></mfrac><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\frac{n^{0.75}}{\log n})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.499028em;vertical-align:-0.481108em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.01792em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mop mtight">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace mtight" style="margin-right:0.19516666666666668em;"></span><span class="mord mathdefault mtight">n</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913142857142857em;"><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">0</span><span class="mord mtight">.</span><span class="mord mtight">7</span><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.481108em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>.</li>
 </ol>
-<h3 id="第一步-求前-lfloor-frac-n-i-rfloor-项的质数位置的前缀和"><a href="#第一步-求前-lfloor-frac-n-i-rfloor-项的质数位置的前缀和" class="headerlink" title="第一步:求前$\lfloor\frac{n}{i}\rfloor$项的质数位置的前缀和"></a>第一步:求前$\lfloor\frac{n}{i}\rfloor$项的质数位置的前缀和</h3><p>设</p>
-<script type="math/tex; mode=display">
-g(x)=\sum_{1\leq i\leq x}[i\in P]f(i)</script><p>.<br>我们知道$\frac{n}{1},\frac{n}{2},\cdots,\frac{n}{i},\cdots,\frac{n}{n}$只有$O(\sqrt{n})$种取值.我们想要算出$g$在这每种取值处的值.</p>
-<h3 id="第二步-求前-n-项的最小质因子大于-P-j-的位置的前缀和"><a href="#第二步-求前-n-项的最小质因子大于-P-j-的位置的前缀和" class="headerlink" title="第二步:求前$n$项的最小质因子大于$P_{j}$的位置的前缀和"></a>第二步:求前$n$项的最小质因子大于$P_{j}$的位置的前缀和</h3>
+<h3 id="第一步求前lfloorfracnirfloor项的质数位置的前缀和"><a class="markdownIt-Anchor" href="#第一步求前lfloorfracnirfloor项的质数位置的前缀和"></a> 第一步:求前<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">⌊</mo><mfrac><mi>n</mi><mi>i</mi></mfrac><mo stretchy="false">⌋</mo></mrow><annotation encoding="application/x-tex">\lfloor\frac{n}{i}\rfloor</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mopen">⌊</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">⌋</span></span></span></span>项的质数位置的前缀和</h3>
+<p>设</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><munder><mo>∑</mo><mrow><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>x</mi></mrow></munder><mo stretchy="false">[</mo><mi>i</mi><mo>∈</mo><mi>P</mi><mo stretchy="false">]</mo><mi>f</mi><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">g(x)=\sum_{1\leq i\leq x}[i\in P]f(i)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.422853em;vertical-align:-1.372848em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.050005em;"><span style="top:-1.8723309999999997em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mrel mtight">≤</span><span class="mord mathdefault mtight">i</span><span class="mrel mtight">≤</span><span class="mord mathdefault mtight">x</span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.372848em;"><span></span></span></span></span></span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mclose">]</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">i</span><span class="mclose">)</span></span></span></span></span></p>
+<p>.<br>
+我们知道<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mi>n</mi><mn>1</mn></mfrac><mo separator="true">,</mo><mfrac><mi>n</mi><mn>2</mn></mfrac><mo separator="true">,</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><mfrac><mi>n</mi><mi>i</mi></mfrac><mo separator="true">,</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><mfrac><mi>n</mi><mi>n</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac{n}{1},\frac{n}{2},\cdots,\frac{n}{i},\cdots,\frac{n}{n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.040392em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>只有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msqrt><mi>n</mi></msqrt><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\sqrt{n})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.05028em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">n</span></span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width="400em" height="1.08em" viewbox="0 0 400000 1080" preserveaspectratio="xMinYMin slice"><path d="M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span><span class="mclose">)</span></span></span></span>种取值.我们想要算出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span>在这每种取值处的值.</p>
+<h3 id="第二步求前n项的最小质因子大于p_j的位置的前缀和"><a class="markdownIt-Anchor" href="#第二步求前n项的最小质因子大于p_j的位置的前缀和"></a> 第二步:求前<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>项的最小质因子大于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">P_{j}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>的位置的前缀和</h3>
+
       
     </div>
 
@@ -582,7 +595,7 @@ g(x)=\sum_{1\leq i\leq x}[i\in P]f(i)</script><p>.<br>我们知道$\frac{n}{1},\
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -621,7 +634,11 @@ g(x)=\sum_{1\leq i\leq x}[i\in P]f(i)</script><p>.<br>我们知道$\frac{n}{1},\
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -661,7 +678,7 @@ g(x)=\sum_{1\leq i\leq x}[i\in P]f(i)</script><p>.<br>我们知道$\frac{n}{1},\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#min25筛"><span class="nav-number">1.</span> <span class="nav-text">min25筛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步-求前-lfloor-frac-n-i-rfloor-项的质数位置的前缀和"><span class="nav-number">2.</span> <span class="nav-text">第一步:求前$\lfloor\frac{n}{i}\rfloor$项的质数位置的前缀和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步-求前-n-项的最小质因子大于-P-j-的位置的前缀和"><span class="nav-number">3.</span> <span class="nav-text">第二步:求前$n$项的最小质因子大于$P_{j}$的位置的前缀和</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#min25筛"><span class="nav-number">1.</span> <span class="nav-text"> min25筛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步求前lfloorfracnirfloor项的质数位置的前缀和"><span class="nav-number">2.</span> <span class="nav-text"> 第一步:求前⌊ni⌋\lfloor\frac{n}{i}\rfloor⌊in​⌋项的质数位置的前缀和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步求前n项的最小质因子大于p_j的位置的前缀和"><span class="nav-number">3.</span> <span class="nav-text"> 第二步:求前nnn项的最小质因子大于PjP_{j}Pj​的位置的前缀和</span></a></li></ol></div>
             
 
           </div>
@@ -1155,42 +1172,8 @@ g(x)=\sum_{1\leq i\leq x}[i\in P]f(i)</script><p>.<br>我们知道$\frac{n}{1},\
 
   
     
-      <script type="text/x-mathjax-config">
-  
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
 
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
   

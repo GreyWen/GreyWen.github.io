@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="game将一个$(a,b,a)$拆分成$(a),(a,b)$,就消去了原题的依赖关系. 于是新的问题是物品的体积为1或2的01背包. 考虑将这两种体积的物品分别从大到小排序,记为$A[1..n],B[1..n]$. 显然$f(1)=A[1]$,现在依次确定$f(2),\cdots,f(k)$. 最优决策一定选了$A,B$各自的一段前缀.进一步地,$f(k+1)$的决策一定是在$f(k)$的基础上,">
+  <meta name="description" content="game 将一个(a,b,a)(a,b,a)(a,b,a)拆分成(a),(a,b)(a),(a,b)(a),(a,b),就消去了原题的依赖关系. 于是新的问题是物品的体积为1或2的01背包. 考虑将这两种体积的物品分别从大到小排序,记为A[1..n],B[1..n]A[1..n],B[1..n]A[1..n],B[1..n]. 显然f(1)=A[1]f(1)=A[1]f(1)=A[1],现在依次">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2019.06.14模拟赛">
 <meta property="og:url" content="http://yoursite.com/2019/06/14/2019-06-14模拟赛/index.html">
 <meta property="og:site_name" content="wgr45097&#39;s blog">
-<meta property="og:description" content="game将一个$(a,b,a)$拆分成$(a),(a,b)$,就消去了原题的依赖关系. 于是新的问题是物品的体积为1或2的01背包. 考虑将这两种体积的物品分别从大到小排序,记为$A[1..n],B[1..n]$. 显然$f(1)=A[1]$,现在依次确定$f(2),\cdots,f(k)$. 最优决策一定选了$A,B$各自的一段前缀.进一步地,$f(k+1)$的决策一定是在$f(k)$的基础上,">
+<meta property="og:description" content="game 将一个(a,b,a)(a,b,a)(a,b,a)拆分成(a),(a,b)(a),(a,b)(a),(a,b),就消去了原题的依赖关系. 于是新的问题是物品的体积为1或2的01背包. 考虑将这两种体积的物品分别从大到小排序,记为A[1..n],B[1..n]A[1..n],B[1..n]A[1..n],B[1..n]. 显然f(1)=A[1]f(1)=A[1]f(1)=A[1],现在依次">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-06-20T05:42:58.860Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019.06.14模拟赛">
-<meta name="twitter:description" content="game将一个$(a,b,a)$拆分成$(a),(a,b)$,就消去了原题的依赖关系. 于是新的问题是物品的体积为1或2的01背包. 考虑将这两种体积的物品分别从大到小排序,记为$A[1..n],B[1..n]$. 显然$f(1)=A[1]$,现在依次确定$f(2),\cdots,f(k)$. 最优决策一定选了$A,B$各自的一段前缀.进一步地,$f(k+1)$的决策一定是在$f(k)$的基础上,">
+<meta name="twitter:description" content="game 将一个(a,b,a)(a,b,a)(a,b,a)拆分成(a),(a,b)(a),(a,b)(a),(a,b),就消去了原题的依赖关系. 于是新的问题是物品的体积为1或2的01背包. 考虑将这两种体积的物品分别从大到小排序,记为A[1..n],B[1..n]A[1..n],B[1..n]A[1..n],B[1..n]. 显然f(1)=A[1]f(1)=A[1]f(1)=A[1],现在依次">
 
 
 
@@ -454,20 +454,23 @@
       
 
       
-        <h3 id="game"><a href="#game" class="headerlink" title="game"></a>game</h3><p>将一个$(a,b,a)$拆分成$(a),(a,b)$,就消去了原题的依赖关系.</p>
+        <h3 id="game"><a class="markdownIt-Anchor" href="#game"></a> game</h3>
+<p>将一个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo separator="true">,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(a,b,a)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">a</span><span class="mclose">)</span></span></span></span>拆分成<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mo stretchy="false">(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(a),(a,b)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span></span></span></span>,就消去了原题的依赖关系.</p>
 <p>于是新的问题是物品的体积为1或2的01背包.</p>
-<p>考虑将这两种体积的物品分别从大到小排序,记为$A[1..n],B[1..n]$.</p>
-<p>显然$f(1)=A[1]$,现在依次确定$f(2),\cdots,f(k)$.</p>
-<p>最优决策一定选了$A,B$各自的一段前缀.进一步地,$f(k+1)$的决策一定是在$f(k)$的基础上,</p>
+<p>考虑将这两种体积的物品分别从大到小排序,记为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo stretchy="false">[</mo><mn>1..</mn><mi>n</mi><mo stretchy="false">]</mo><mo separator="true">,</mo><mi>B</mi><mo stretchy="false">[</mo><mn>1..</mn><mi>n</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">A[1..n],B[1..n]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">A</span><span class="mopen">[</span><span class="mord">1</span><span class="mord">.</span><span class="mord">.</span><span class="mord mathdefault">n</span><span class="mclose">]</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mopen">[</span><span class="mord">1</span><span class="mord">.</span><span class="mord">.</span><span class="mord mathdefault">n</span><span class="mclose">]</span></span></span></span>.</p>
+<p>显然<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo><mo>=</mo><mi>A</mi><mo stretchy="false">[</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">f(1)=A[1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">A</span><span class="mopen">[</span><span class="mord">1</span><span class="mclose">]</span></span></span></span>,现在依次确定<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo><mo separator="true">,</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><mi>f</mi><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(2),\cdots,f(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord">2</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>.</p>
+<p>最优决策一定选了<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo separator="true">,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A,B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">A</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>各自的一段前缀.进一步地,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(k+1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>的决策一定是在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>的基础上,</p>
 <ol>
 <li>多选一个体积为1的物品,或者</li>
 <li>少选一个体积为1的物品,再多选一个体积为2的物品.</li>
 </ol>
-<p>这是可以$O(1)$转移的.</p>
-<p>事实上,一类类似的问题被称作”可撤销的贪心”.在本题中,每次转移至多撤销一次.</p>
-<h3 id="sequence"><a href="#sequence" class="headerlink" title="sequence"></a>sequence</h3><p>有$O(qn)$的朴素dp.注意到每次询问都是转移询问长度次,考虑将转移用矩阵乘法表示,则每次询问就是求矩阵的区间积.复杂度是$O((n+q)|\Sigma|^{3})$</p>
+<p>这是可以<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>转移的.</p>
+<p>事实上,一类类似的问题被称作&quot;可撤销的贪心&quot;.在本题中,每次转移至多撤销一次.</p>
+<h3 id="sequence"><a class="markdownIt-Anchor" href="#sequence"></a> sequence</h3>
+<p>有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>q</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(qn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>的朴素dp.注意到每次询问都是转移询问长度次,考虑将转移用矩阵乘法表示,则每次询问就是求矩阵的区间积.复杂度是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mi>q</mi><mo stretchy="false">)</mo><mi mathvariant="normal">∣</mi><mi mathvariant="normal">Σ</mi><msup><mi mathvariant="normal">∣</mi><mn>3</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O((n+q)|\Sigma|^{3})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mclose">)</span><span class="mord">∣</span><span class="mord">Σ</span><span class="mord"><span class="mord">∣</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></p>
 <p>矩阵乘法还可以优化.</p>
-<h3 id="area"><a href="#area" class="headerlink" title="area"></a>area</h3><p>点的区间和形成$(n^{2})$个新点,则要求的式子可以表示为截距的形式.求新点的凸包,每次在凸包上二分询问的斜率.</p>
+<h3 id="area"><a class="markdownIt-Anchor" href="#area"></a> area</h3>
+<p>点的区间和形成<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(n^{2})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>个新点,则要求的式子可以表示为截距的形式.求新点的凸包,每次在凸包上二分询问的斜率.</p>
 <p>注意做各种操作的前后要判重,判三点共线.特别地,在做凸包<strong>之前</strong>要保证没有重合点,最好是一开始先做一次先x后y的坐标排序并unique.如果不想做额外的排序,想利用极角排序的结果,则要注意极角相同时按先x后y排序,且最左下的原点自身同样需要判重.</p>
 
       
@@ -580,7 +583,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -619,7 +622,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -659,7 +666,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#game"><span class="nav-number">1.</span> <span class="nav-text">game</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sequence"><span class="nav-number">2.</span> <span class="nav-text">sequence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#area"><span class="nav-number">3.</span> <span class="nav-text">area</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#game"><span class="nav-number">1.</span> <span class="nav-text"> game</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sequence"><span class="nav-number">2.</span> <span class="nav-text"> sequence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#area"><span class="nav-number">3.</span> <span class="nav-text"> area</span></a></li></ol></div>
             
 
           </div>
@@ -1153,42 +1160,8 @@
 
   
     
-      <script type="text/x-mathjax-config">
-  
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
 
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
   
